@@ -48,8 +48,9 @@
     if (!self.objects) {
         self.objects = [[NSMutableArray alloc] init];
     }
-    [self.objects insertObject:[[RWTScaryBugDoc alloc] initWithTitle:@"Metoecus paradoxus"] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.bugs addObject:[[RWTScaryBugDoc alloc] initWithTitle:@"Metoecus paradoxus"]];
+    NSUInteger iLastRow = _bugs.count - 1;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:iLastRow inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
@@ -59,7 +60,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        RWTScaryBugDoc *object = self.objects[indexPath.row];
+        RWTScaryBugDoc *object = self.bugs[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
         [controller setDetailItem:object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
