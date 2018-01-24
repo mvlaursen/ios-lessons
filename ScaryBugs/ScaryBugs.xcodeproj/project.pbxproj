@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B03DEB120190834005A5092 /* RWTRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B03DEB020190834005A5092 /* RWTRateView.m */; };
+		3B03DEB42019084C005A5092 /* RWTUIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B03DEB32019084C005A5092 /* RWTUIImageExtras.m */; };
+		3B03DEB82019086F005A5092 /* shockedface2_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B03DEB52019086F005A5092 /* shockedface2_empty.png */; };
+		3B03DEB92019086F005A5092 /* shockedface2_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B03DEB62019086F005A5092 /* shockedface2_full.png */; };
+		3B03DEBA2019086F005A5092 /* shockedface2_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B03DEB72019086F005A5092 /* shockedface2_half.png */; };
+		3B03DEBC2019087F005A5092 /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B03DEBB2019087F005A5092 /* logo1.png */; };
 		3B7595D420180144004F50EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7595D320180144004F50EF /* main.m */; };
 		3B7595D720180144004F50EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7595D620180144004F50EF /* AppDelegate.m */; };
 		3B7595DA20180144004F50EF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7595D920180144004F50EF /* MasterViewController.m */; };
@@ -39,6 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B03DEAF20190834005A5092 /* RWTRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTRateView.h; sourceTree = "<group>"; };
+		3B03DEB020190834005A5092 /* RWTRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTRateView.m; sourceTree = "<group>"; };
+		3B03DEB22019084C005A5092 /* RWTUIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTUIImageExtras.h; sourceTree = "<group>"; };
+		3B03DEB32019084C005A5092 /* RWTUIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTUIImageExtras.m; sourceTree = "<group>"; };
+		3B03DEB52019086F005A5092 /* shockedface2_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_empty.png; sourceTree = "<group>"; };
+		3B03DEB62019086F005A5092 /* shockedface2_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_full.png; sourceTree = "<group>"; };
+		3B03DEB72019086F005A5092 /* shockedface2_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_half.png; sourceTree = "<group>"; };
+		3B03DEBB2019087F005A5092 /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo1.png; sourceTree = "<group>"; };
 		3B7595CF20180144004F50EF /* ScaryBugs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScaryBugs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7595D320180144004F50EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B7595D520180144004F50EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -158,6 +172,10 @@
 				3B7595DC20180144004F50EF /* DetailViewController.m */,
 				3B7595D820180144004F50EF /* MasterViewController.h */,
 				3B7595D920180144004F50EF /* MasterViewController.m */,
+				3B03DEAF20190834005A5092 /* RWTRateView.h */,
+				3B03DEB020190834005A5092 /* RWTRateView.m */,
+				3B03DEB22019084C005A5092 /* RWTUIImageExtras.h */,
+				3B03DEB32019084C005A5092 /* RWTUIImageExtras.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -174,8 +192,12 @@
 		3B759610201808A9004F50EF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3B03DEBB2019087F005A5092 /* logo1.png */,
 				3B759611201809BC004F50EF /* Metoecus_paradoxus.png */,
 				3B75961320180A4E004F50EF /* Metoecus_paradoxus_thumb.png */,
+				3B03DEB52019086F005A5092 /* shockedface2_empty.png */,
+				3B03DEB62019086F005A5092 /* shockedface2_full.png */,
+				3B03DEB72019086F005A5092 /* shockedface2_half.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -290,9 +312,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B759612201809BC004F50EF /* Metoecus_paradoxus.png in Resources */,
+				3B03DEB82019086F005A5092 /* shockedface2_empty.png in Resources */,
 				3B7595E520180144004F50EF /* LaunchScreen.storyboard in Resources */,
 				3B7595E220180144004F50EF /* Assets.xcassets in Resources */,
+				3B03DEBC2019087F005A5092 /* logo1.png in Resources */,
+				3B03DEBA2019086F005A5092 /* shockedface2_half.png in Resources */,
 				3B75961420180A4E004F50EF /* Metoecus_paradoxus_thumb.png in Resources */,
+				3B03DEB92019086F005A5092 /* shockedface2_full.png in Resources */,
 				3B7595E020180144004F50EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,8 +346,10 @@
 			files = (
 				3B7595D720180144004F50EF /* AppDelegate.m in Sources */,
 				3B75960F2018065C004F50EF /* RWTScaryBugDoc.m in Sources */,
+				3B03DEB42019084C005A5092 /* RWTUIImageExtras.m in Sources */,
 				3B7595DA20180144004F50EF /* MasterViewController.m in Sources */,
 				3B7595D420180144004F50EF /* main.m in Sources */,
+				3B03DEB120190834005A5092 /* RWTRateView.m in Sources */,
 				3B7595DD20180144004F50EF /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +586,7 @@
 				3B75960120180144004F50EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B75960220180144004F50EF /* Build configuration list for PBXNativeTarget "ScaryBugsTests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +595,7 @@
 				3B75960420180144004F50EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B75960520180144004F50EF /* Build configuration list for PBXNativeTarget "ScaryBugsUITests" */ = {
 			isa = XCConfigurationList;
@@ -574,6 +604,7 @@
 				3B75960720180144004F50EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
