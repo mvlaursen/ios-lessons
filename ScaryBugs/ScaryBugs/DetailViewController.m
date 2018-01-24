@@ -11,6 +11,8 @@
 
 @interface DetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @end
 
 @implementation DetailViewController
@@ -20,6 +22,7 @@
     if (self.detailItem) {
         RWTScaryBugDoc *bug = self.detailItem;
         self.detailDescriptionLabel.text = bug.title;
+        self.imageView.image = bug.fullImage;
     }
 }
 
