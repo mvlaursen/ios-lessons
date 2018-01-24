@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class RWTScaryBugDoc;
+
 @interface DetailViewController : UIViewController
 
-@property (strong, nonatomic) NSDate *detailItem;
+@property (strong, nonatomic) RWTScaryBugDoc *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end
