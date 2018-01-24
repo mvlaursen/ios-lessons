@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
+#import "MasterViewController.h"
+#import "RWTScaryBugDoc.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -18,10 +20,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
+    
+    UINavigationController *masterNavigationController = [splitViewController.viewControllers firstObject];
+    MasterViewController *masterController = [masterNavigationController.viewControllers firstObject];
+    RWTScaryBugDoc *bug0 = [[RWTScaryBugDoc alloc] initWithTitle:@"Potato Bug"];
+    RWTScaryBugDoc *bug1 = [[RWTScaryBugDoc alloc] initWithTitle:@"House Centipede"];
+    RWTScaryBugDoc *bug2 = [[RWTScaryBugDoc alloc] initWithTitle:@"Wolf Spider"];
+    NSMutableArray *bugs = [NSMutableArray arrayWithObjects:bug0, bug1, bug2, nil];
+    masterController.bugs = bugs;
+    
+    UINavigationController *detailNavigationController = [splitViewController.viewControllers lastObject];
+    detailNavigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
+    
     return YES;
 }
 
