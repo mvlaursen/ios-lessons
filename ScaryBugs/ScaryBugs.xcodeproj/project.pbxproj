@@ -16,7 +16,6 @@
 		3B7595E520180144004F50EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7595E320180144004F50EF /* LaunchScreen.storyboard */; };
 		3B7595F020180144004F50EF /* ScaryBugsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7595EF20180144004F50EF /* ScaryBugsTests.m */; };
 		3B7595FB20180144004F50EF /* ScaryBugsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7595FA20180144004F50EF /* ScaryBugsUITests.m */; };
-		3B75960C20180556004F50EF /* RWTScaryBugData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B75960B20180556004F50EF /* RWTScaryBugData.m */; };
 		3B75960F2018065C004F50EF /* RWTScaryBugDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B75960E2018065C004F50EF /* RWTScaryBugDoc.m */; };
 		3B759612201809BC004F50EF /* Metoecus_paradoxus.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B759611201809BC004F50EF /* Metoecus_paradoxus.png */; };
 		3B75961420180A4E004F50EF /* Metoecus_paradoxus_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B75961320180A4E004F50EF /* Metoecus_paradoxus_thumb.png */; };
@@ -58,8 +57,6 @@
 		3B7595F620180144004F50EF /* ScaryBugsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScaryBugsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7595FA20180144004F50EF /* ScaryBugsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaryBugsUITests.m; sourceTree = "<group>"; };
 		3B7595FC20180144004F50EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B75960A20180556004F50EF /* RWTScaryBugData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTScaryBugData.h; sourceTree = "<group>"; };
-		3B75960B20180556004F50EF /* RWTScaryBugData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTScaryBugData.m; sourceTree = "<group>"; };
 		3B75960D2018065C004F50EF /* RWTScaryBugDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTScaryBugDoc.h; sourceTree = "<group>"; };
 		3B75960E2018065C004F50EF /* RWTScaryBugDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTScaryBugDoc.m; sourceTree = "<group>"; };
 		3B759611201809BC004F50EF /* Metoecus_paradoxus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Metoecus_paradoxus.png; sourceTree = "<group>"; };
@@ -168,8 +165,6 @@
 		3B759609201804BE004F50EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3B75960A20180556004F50EF /* RWTScaryBugData.h */,
-				3B75960B20180556004F50EF /* RWTScaryBugData.m */,
 				3B75960D2018065C004F50EF /* RWTScaryBugDoc.h */,
 				3B75960E2018065C004F50EF /* RWTScaryBugDoc.m */,
 			);
@@ -323,7 +318,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B75960C20180556004F50EF /* RWTScaryBugData.m in Sources */,
 				3B7595D720180144004F50EF /* AppDelegate.m in Sources */,
 				3B75960F2018065C004F50EF /* RWTScaryBugDoc.m in Sources */,
 				3B7595DA20180144004F50EF /* MasterViewController.m in Sources */,

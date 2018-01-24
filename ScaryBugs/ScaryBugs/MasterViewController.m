@@ -8,7 +8,6 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
-#import "RWTScaryBugData.h"
 #import "RWTScaryBugDoc.h"
 
 @interface MasterViewController ()
@@ -81,7 +80,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
     RWTScaryBugDoc *bug = self.objects[indexPath.row];
-    cell.textLabel.text = bug.data.title;
+    cell.textLabel.text = bug.title;
     return cell;
 }
 

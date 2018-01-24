@@ -13,7 +13,8 @@
 
 @interface RWTScaryBugDoc : NSObject
 
-@property (strong) RWTScaryBugData *data;
+@property (strong) NSString *title;
+@property (assign) float rating;
 @property (strong) UIImage *thumbImage;
 @property (strong) UIImage *fullImage;
 

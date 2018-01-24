@@ -7,7 +7,6 @@
 //
 
 #import "DetailViewController.h"
-#import "RWTScaryBugData.h"
 #import "RWTScaryBugDoc.h"
 
 @interface DetailViewController ()
@@ -20,7 +19,7 @@
     // Update the user interface for the detail item.
     if (self.detailItem) {
         RWTScaryBugDoc *bug = self.detailItem;
-        self.detailDescriptionLabel.text = bug.data.title;
+        self.detailDescriptionLabel.text = bug.title;
     }
 }
 
