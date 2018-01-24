@@ -18,8 +18,8 @@
 - (id) initWithTitle:(NSString *)title {
     if (self = [super init]) {
         self.data = [[RWTScaryBugData alloc] initWithTitle:title rating:0];
-        self.thumbImage = nil;
-        self.fullImage = nil;
+        self.thumbImage = [UIImage imageNamed:@"Metoecus_paradoxus_thumb.png"];
+        self.fullImage = [UIImage imageNamed:@"Metoecus_paradoxus.png"];
     }
     return self;
 }
