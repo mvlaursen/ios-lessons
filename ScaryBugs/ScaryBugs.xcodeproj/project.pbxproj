@@ -16,6 +16,8 @@
 		3B7595E520180144004F50EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7595E320180144004F50EF /* LaunchScreen.storyboard */; };
 		3B7595F020180144004F50EF /* ScaryBugsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7595EF20180144004F50EF /* ScaryBugsTests.m */; };
 		3B7595FB20180144004F50EF /* ScaryBugsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7595FA20180144004F50EF /* ScaryBugsUITests.m */; };
+		3B75960C20180556004F50EF /* RWTScaryBugData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B75960B20180556004F50EF /* RWTScaryBugData.m */; };
+		3B75960F2018065C004F50EF /* RWTScaryBugDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B75960E2018065C004F50EF /* RWTScaryBugDoc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		3B7595F620180144004F50EF /* ScaryBugsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScaryBugsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7595FA20180144004F50EF /* ScaryBugsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScaryBugsUITests.m; sourceTree = "<group>"; };
 		3B7595FC20180144004F50EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B75960A20180556004F50EF /* RWTScaryBugData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTScaryBugData.h; sourceTree = "<group>"; };
+		3B75960B20180556004F50EF /* RWTScaryBugData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTScaryBugData.m; sourceTree = "<group>"; };
+		3B75960D2018065C004F50EF /* RWTScaryBugDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTScaryBugDoc.h; sourceTree = "<group>"; };
+		3B75960E2018065C004F50EF /* RWTScaryBugDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTScaryBugDoc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,17 +110,10 @@
 		3B7595D120180144004F50EF /* ScaryBugs */ = {
 			isa = PBXGroup;
 			children = (
-				3B7595D520180144004F50EF /* AppDelegate.h */,
-				3B7595D620180144004F50EF /* AppDelegate.m */,
-				3B7595D820180144004F50EF /* MasterViewController.h */,
-				3B7595D920180144004F50EF /* MasterViewController.m */,
-				3B7595DB20180144004F50EF /* DetailViewController.h */,
-				3B7595DC20180144004F50EF /* DetailViewController.m */,
-				3B7595DE20180144004F50EF /* Main.storyboard */,
-				3B7595E120180144004F50EF /* Assets.xcassets */,
-				3B7595E320180144004F50EF /* LaunchScreen.storyboard */,
-				3B7595E620180144004F50EF /* Info.plist */,
+				3B759609201804BE004F50EF /* Model */,
 				3B7595D220180144004F50EF /* Supporting Files */,
+				3B75960820180461004F50EF /* View */,
+				3B7595E120180144004F50EF /* Assets.xcassets */,
 			);
 			path = ScaryBugs;
 			sourceTree = "<group>";
@@ -122,6 +121,7 @@
 		3B7595D220180144004F50EF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3B7595E620180144004F50EF /* Info.plist */,
 				3B7595D320180144004F50EF /* main.m */,
 			);
 			name = "Supporting Files";
@@ -143,6 +143,32 @@
 				3B7595FC20180144004F50EF /* Info.plist */,
 			);
 			path = ScaryBugsUITests;
+			sourceTree = "<group>";
+		};
+		3B75960820180461004F50EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B7595E320180144004F50EF /* LaunchScreen.storyboard */,
+				3B7595DE20180144004F50EF /* Main.storyboard */,
+				3B7595D520180144004F50EF /* AppDelegate.h */,
+				3B7595D620180144004F50EF /* AppDelegate.m */,
+				3B7595DB20180144004F50EF /* DetailViewController.h */,
+				3B7595DC20180144004F50EF /* DetailViewController.m */,
+				3B7595D820180144004F50EF /* MasterViewController.h */,
+				3B7595D920180144004F50EF /* MasterViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3B759609201804BE004F50EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B75960A20180556004F50EF /* RWTScaryBugData.h */,
+				3B75960B20180556004F50EF /* RWTScaryBugData.m */,
+				3B75960D2018065C004F50EF /* RWTScaryBugDoc.h */,
+				3B75960E2018065C004F50EF /* RWTScaryBugDoc.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,7 +307,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B75960C20180556004F50EF /* RWTScaryBugData.m in Sources */,
 				3B7595D720180144004F50EF /* AppDelegate.m in Sources */,
+				3B75960F2018065C004F50EF /* RWTScaryBugDoc.m in Sources */,
 				3B7595DA20180144004F50EF /* MasterViewController.m in Sources */,
 				3B7595D420180144004F50EF /* main.m in Sources */,
 				3B7595DD20180144004F50EF /* DetailViewController.m in Sources */,
