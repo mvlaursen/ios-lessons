@@ -11,7 +11,7 @@
 
 @class RWTScaryBugDoc;
 
-@interface DetailViewController : UIViewController <RWTRateViewDelegate, UITextFieldDelegate>
+@interface DetailViewController : UIViewController <RWTRateViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) RWTScaryBugDoc *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;

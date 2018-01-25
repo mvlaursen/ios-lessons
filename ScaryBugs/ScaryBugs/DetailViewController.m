@@ -9,17 +9,23 @@
 #import "DetailViewController.h"
 #import "RWTRateView.h"
 #import "RWTScaryBugDoc.h"
+#import "RWTUIImageExtras.h"
 
 @interface DetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet RWTRateView *rateView;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
+@property (strong, nonatomic) UIImagePickerController *picker;
+
+- (IBAction)addPictureTapped:(id)sender;
 - (IBAction)titleFieldTextChanged:(id)sender;
 
 @end
 
 @implementation DetailViewController
+
+@synthesize picker = _picker;
 
 - (void)configureView {
     self.rateView.notSelectedImage = [UIImage imageNamed:@"shockedface2_empty.png"];
@@ -69,10 +75,36 @@
     self.detailItem.title = self.titleField.text;
 }
 
+- (IBAction)addPictureTapped:(id)sender {
+    if (self.picker == nil) {
+        self.picker = [[UIImagePickerController alloc] init];
+        self.picker.delegate = self;
+        self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        self.picker.allowsEditing = NO;
+    }
+    [self presentViewController:_picker animated:YES completion:nil];
+}
+
 #pragma mark RWTRateViewDelegate
 
 - (void)rateView:(RWTRateView *)rateView ratingDidChange:(float)rating {
     self.detailItem.rating = rating;
+}
+
+#pragma mark UIImagePickerControllerDelegate
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    UIImage *fullImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *thumbImage = [fullImage imageByScalingAndCroppingForSize:CGSizeMake(44, 44)];
+    self.detailItem.fullImage = fullImage;
+    self.detailItem.thumbImage = thumbImage;
+    self.imageView.image = fullImage;
 }
 
 #pragma mark UITextFieldDelegate
