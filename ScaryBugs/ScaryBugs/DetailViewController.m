@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
+- (IBAction)titleFieldTextChanged:(id)sender;
 
 @end
 
@@ -53,5 +54,9 @@
     }
 }
 
+
+- (IBAction)titleFieldTextChanged:(id)sender {
+    self.detailItem.title = self.titleField.text;
+}
 
 @end
