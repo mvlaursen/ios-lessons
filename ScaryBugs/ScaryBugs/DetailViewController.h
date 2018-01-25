@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RWTRateView.h"
 
 @class RWTScaryBugDoc;
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <RWTRateViewDelegate>
 
 @property (strong, nonatomic) RWTScaryBugDoc *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
