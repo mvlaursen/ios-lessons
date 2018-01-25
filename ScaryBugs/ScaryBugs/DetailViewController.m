@@ -12,6 +12,7 @@
 @interface DetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *titleField;
 
 @end
 
@@ -23,6 +24,7 @@
         RWTScaryBugDoc *bug = self.detailItem;
         self.detailDescriptionLabel.text = bug.title;
         self.imageView.image = bug.fullImage;
+        self.titleField.text = bug.title;
     }
 }
 
