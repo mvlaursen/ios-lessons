@@ -77,12 +77,22 @@
 
 - (IBAction)addPictureTapped:(id)sender {
     if (self.picker == nil) {
-        self.picker = [[UIImagePickerController alloc] init];
-        self.picker.delegate = self;
-        self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        self.picker.allowsEditing = NO;
+        dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        
+        dispatch_async(concurrentQueue, ^{
+            self.picker = [[UIImagePickerController alloc] init];
+            self.picker.delegate = self;
+            self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            self.picker.allowsEditing = NO;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self presentViewController:_picker animated:YES completion:nil];
+            });
+        });
+    } else {
+        [self presentViewController:_picker animated:YES completion:nil];
     }
-    [self presentViewController:_picker animated:YES completion:nil];
+    
 }
 
 #pragma mark RWTRateViewDelegate
