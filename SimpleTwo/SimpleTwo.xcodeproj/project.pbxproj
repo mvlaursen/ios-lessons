@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B00AE2B202B766300341B29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00AE2A202B766300341B29 /* AppDelegate.swift */; };
+		3B00AE2D202B766300341B29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00AE2C202B766300341B29 /* ViewController.swift */; };
+		3B00AE30202B766300341B29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B00AE2E202B766300341B29 /* Main.storyboard */; };
+		3B00AE32202B766300341B29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B00AE31202B766300341B29 /* Assets.xcassets */; };
+		3B00AE35202B766300341B29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B00AE33202B766300341B29 /* LaunchScreen.storyboard */; };
+		3B00AE40202B766300341B29 /* SimpleTwoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00AE3F202B766300341B29 /* SimpleTwoTests.swift */; };
+		3B00AE4B202B766300341B29 /* SimpleTwoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00AE4A202B766300341B29 /* SimpleTwoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B00AE3C202B766300341B29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B00AE1F202B766200341B29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B00AE26202B766300341B29;
+			remoteInfo = SimpleTwo;
+		};
+		3B00AE47202B766300341B29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B00AE1F202B766200341B29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B00AE26202B766300341B29;
+			remoteInfo = SimpleTwo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3B00AE27202B766300341B29 /* SimpleTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B00AE2A202B766300341B29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3B00AE2C202B766300341B29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B00AE2F202B766300341B29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B00AE31202B766300341B29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B00AE34202B766300341B29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3B00AE36202B766300341B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B00AE3B202B766300341B29 /* SimpleTwoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleTwoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B00AE3F202B766300341B29 /* SimpleTwoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTwoTests.swift; sourceTree = "<group>"; };
+		3B00AE41202B766300341B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B00AE46202B766300341B29 /* SimpleTwoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleTwoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B00AE4A202B766300341B29 /* SimpleTwoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTwoUITests.swift; sourceTree = "<group>"; };
+		3B00AE4C202B766300341B29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B00AE24202B766300341B29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B00AE38202B766300341B29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B00AE43202B766300341B29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B00AE1E202B766200341B29 = {
+			isa = PBXGroup;
+			children = (
+				3B00AE29202B766300341B29 /* SimpleTwo */,
+				3B00AE3E202B766300341B29 /* SimpleTwoTests */,
+				3B00AE49202B766300341B29 /* SimpleTwoUITests */,
+				3B00AE28202B766300341B29 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B00AE28202B766300341B29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B00AE27202B766300341B29 /* SimpleTwo.app */,
+				3B00AE3B202B766300341B29 /* SimpleTwoTests.xctest */,
+				3B00AE46202B766300341B29 /* SimpleTwoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B00AE29202B766300341B29 /* SimpleTwo */ = {
+			isa = PBXGroup;
+			children = (
+				3B00AE2A202B766300341B29 /* AppDelegate.swift */,
+				3B00AE2C202B766300341B29 /* ViewController.swift */,
+				3B00AE2E202B766300341B29 /* Main.storyboard */,
+				3B00AE31202B766300341B29 /* Assets.xcassets */,
+				3B00AE33202B766300341B29 /* LaunchScreen.storyboard */,
+				3B00AE36202B766300341B29 /* Info.plist */,
+			);
+			path = SimpleTwo;
+			sourceTree = "<group>";
+		};
+		3B00AE3E202B766300341B29 /* SimpleTwoTests */ = {
+			isa = PBXGroup;
+			children = (
+				3B00AE3F202B766300341B29 /* SimpleTwoTests.swift */,
+				3B00AE41202B766300341B29 /* Info.plist */,
+			);
+			path = SimpleTwoTests;
+			sourceTree = "<group>";
+		};
+		3B00AE49202B766300341B29 /* SimpleTwoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3B00AE4A202B766300341B29 /* SimpleTwoUITests.swift */,
+				3B00AE4C202B766300341B29 /* Info.plist */,
+			);
+			path = SimpleTwoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B00AE26202B766300341B29 /* SimpleTwo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B00AE4F202B766300341B29 /* Build configuration list for PBXNativeTarget "SimpleTwo" */;
+			buildPhases = (
+				3B00AE23202B766300341B29 /* Sources */,
+				3B00AE24202B766300341B29 /* Frameworks */,
+				3B00AE25202B766300341B29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleTwo;
+			productName = SimpleTwo;
+			productReference = 3B00AE27202B766300341B29 /* SimpleTwo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3B00AE3A202B766300341B29 /* SimpleTwoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B00AE52202B766300341B29 /* Build configuration list for PBXNativeTarget "SimpleTwoTests" */;
+			buildPhases = (
+				3B00AE37202B766300341B29 /* Sources */,
+				3B00AE38202B766300341B29 /* Frameworks */,
+				3B00AE39202B766300341B29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B00AE3D202B766300341B29 /* PBXTargetDependency */,
+			);
+			name = SimpleTwoTests;
+			productName = SimpleTwoTests;
+			productReference = 3B00AE3B202B766300341B29 /* SimpleTwoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3B00AE45202B766300341B29 /* SimpleTwoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B00AE55202B766300341B29 /* Build configuration list for PBXNativeTarget "SimpleTwoUITests" */;
+			buildPhases = (
+				3B00AE42202B766300341B29 /* Sources */,
+				3B00AE43202B766300341B29 /* Frameworks */,
+				3B00AE44202B766300341B29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B00AE48202B766300341B29 /* PBXTargetDependency */,
+			);
+			name = SimpleTwoUITests;
+			productName = SimpleTwoUITests;
+			productReference = 3B00AE46202B766300341B29 /* SimpleTwoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B00AE1F202B766200341B29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Laursen.org;
+				TargetAttributes = {
+					3B00AE26202B766300341B29 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = NM9E6W7574;
+						ProvisioningStyle = Automatic;
+					};
+					3B00AE3A202B766300341B29 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = NM9E6W7574;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3B00AE26202B766300341B29;
+					};
+					3B00AE45202B766300341B29 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = NM9E6W7574;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3B00AE26202B766300341B29;
+					};
+				};
+			};
+			buildConfigurationList = 3B00AE22202B766200341B29 /* Build configuration list for PBXProject "SimpleTwo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B00AE1E202B766200341B29;
+			productRefGroup = 3B00AE28202B766300341B29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B00AE26202B766300341B29 /* SimpleTwo */,
+				3B00AE3A202B766300341B29 /* SimpleTwoTests */,
+				3B00AE45202B766300341B29 /* SimpleTwoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B00AE25202B766300341B29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B00AE35202B766300341B29 /* LaunchScreen.storyboard in Resources */,
+				3B00AE32202B766300341B29 /* Assets.xcassets in Resources */,
+				3B00AE30202B766300341B29 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B00AE39202B766300341B29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B00AE44202B766300341B29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B00AE23202B766300341B29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B00AE2D202B766300341B29 /* ViewController.swift in Sources */,
+				3B00AE2B202B766300341B29 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B00AE37202B766300341B29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B00AE40202B766300341B29 /* SimpleTwoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B00AE42202B766300341B29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B00AE4B202B766300341B29 /* SimpleTwoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B00AE3D202B766300341B29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B00AE26202B766300341B29 /* SimpleTwo */;
+			targetProxy = 3B00AE3C202B766300341B29 /* PBXContainerItemProxy */;
+		};
+		3B00AE48202B766300341B29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B00AE26202B766300341B29 /* SimpleTwo */;
+			targetProxy = 3B00AE47202B766300341B29 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3B00AE2E202B766300341B29 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B00AE2F202B766300341B29 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3B00AE33202B766300341B29 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B00AE34202B766300341B29 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B00AE4D202B766300341B29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3B00AE4E202B766300341B29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B00AE50202B766300341B29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NM9E6W7574;
+				INFOPLIST_FILE = SimpleTwo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.laursen.SimpleTwo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3B00AE51202B766300341B29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NM9E6W7574;
+				INFOPLIST_FILE = SimpleTwo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.laursen.SimpleTwo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3B00AE53202B766300341B29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = NM9E6W7574;
+				INFOPLIST_FILE = SimpleTwoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.laursen.SimpleTwoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleTwo.app/SimpleTwo";
+			};
+			name = Debug;
+		};
+		3B00AE54202B766300341B29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = NM9E6W7574;
+				INFOPLIST_FILE = SimpleTwoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.laursen.SimpleTwoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleTwo.app/SimpleTwo";
+			};
+			name = Release;
+		};
+		3B00AE56202B766300341B29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = NM9E6W7574;
+				INFOPLIST_FILE = SimpleTwoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.laursen.SimpleTwoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SimpleTwo;
+			};
+			name = Debug;
+		};
+		3B00AE57202B766300341B29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = NM9E6W7574;
+				INFOPLIST_FILE = SimpleTwoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.laursen.SimpleTwoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SimpleTwo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B00AE22202B766200341B29 /* Build configuration list for PBXProject "SimpleTwo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B00AE4D202B766300341B29 /* Debug */,
+				3B00AE4E202B766300341B29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B00AE4F202B766300341B29 /* Build configuration list for PBXNativeTarget "SimpleTwo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B00AE50202B766300341B29 /* Debug */,
+				3B00AE51202B766300341B29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3B00AE52202B766300341B29 /* Build configuration list for PBXNativeTarget "SimpleTwoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B00AE53202B766300341B29 /* Debug */,
+				3B00AE54202B766300341B29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3B00AE55202B766300341B29 /* Build configuration list for PBXNativeTarget "SimpleTwoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B00AE56202B766300341B29 /* Debug */,
+				3B00AE57202B766300341B29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B00AE1F202B766200341B29 /* Project object */;
+}
