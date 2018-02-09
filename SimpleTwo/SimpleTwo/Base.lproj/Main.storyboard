@@ -23,16 +23,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ltr-rf-rhu" userLabel="Main Stack">
-                                <rect key="frame" x="16" y="20" width="288" height="251.5"/>
+                                <rect key="frame" x="16" y="20" width="288" height="502"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2Q-V1-jfK">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="45.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2Q-V1-jfK">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="36"/>
                                         <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PND-5q-4Zb">
-                                        <rect key="frame" x="0.0" y="53.5" width="288" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PND-5q-4Zb">
+                                        <rect key="frame" x="0.0" y="8" width="288" height="0.0"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -40,16 +40,13 @@
                                             <action selector="enter:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="iqg-Xd-8hX"/>
                                         </connections>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat" translatesAutoresizingMaskIntoConstraints="NO" id="hNs-et-fbI">
-                                        <rect key="frame" x="0.0" y="91.5" width="288" height="160"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="160" id="jbb-10-zgk"/>
-                                        </constraints>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Cat" translatesAutoresizingMaskIntoConstraints="NO" id="hNs-et-fbI">
+                                        <rect key="frame" x="0.0" y="16" width="288" height="486"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iEk-vh-11R" userLabel="Buttons">
-                                <rect key="frame" x="118" y="279" width="84" height="30"/>
+                                <rect key="frame" x="118" y="530" width="84" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3Q-5C-h5Y">
                                         <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
@@ -76,7 +73,8 @@
                         <constraints>
                             <constraint firstItem="iEk-vh-11R" firstAttribute="centerX" secondItem="Ltr-rf-rhu" secondAttribute="centerX" id="3j0-Qz-y3M"/>
                             <constraint firstItem="Ltr-rf-rhu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8jM-ky-ST2"/>
-                            <constraint firstItem="iEk-vh-11R" firstAttribute="top" secondItem="Ltr-rf-rhu" secondAttribute="bottom" constant="7.5" id="QcX-wn-Hy8"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iEk-vh-11R" secondAttribute="bottom" constant="8" id="A0m-kT-jwh"/>
+                            <constraint firstItem="iEk-vh-11R" firstAttribute="top" secondItem="Ltr-rf-rhu" secondAttribute="bottom" constant="8" id="QcX-wn-Hy8"/>
                             <constraint firstItem="Ltr-rf-rhu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="p4U-3H-EeG"/>
                             <constraint firstItem="Ltr-rf-rhu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wml-Ps-rBL"/>
                         </constraints>
