@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ltr-rf-rhu" userLabel="Main Stack">
-                                <rect key="frame" x="20" y="20" width="374" height="83.666666666666671"/>
+                                <rect key="frame" x="20" y="20" width="374" height="441.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2Q-V1-jfK">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45.666666666666671"/>
@@ -40,13 +40,19 @@
                                             <action selector="enter:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="iqg-Xd-8hX"/>
                                         </connections>
                                     </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat" translatesAutoresizingMaskIntoConstraints="NO" id="hNs-et-fbI">
+                                        <rect key="frame" x="0.0" y="91.666666666666686" width="374" height="350"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="350" id="jbb-10-zgk"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iEk-vh-11R" userLabel="Buttons">
-                                <rect key="frame" x="165.66666666666666" y="111.66666666666666" width="84" height="29.999999999999972"/>
+                                <rect key="frame" x="165" y="686" width="84" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3Q-5C-h5Y">
-                                        <rect key="frame" x="0.0" y="0.0" width="38" height="29.999999999999986"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
                                         <state key="normal" title="Show">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -55,12 +61,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glF-NE-6u2">
-                                        <rect key="frame" x="46" y="0.0" width="38" height="29.999999999999986"/>
+                                        <rect key="frame" x="46" y="0.0" width="38" height="30"/>
                                         <state key="normal" title="Hide">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="hide:" destination="BYZ-38-t0r" eventType="touchDragInside" id="o1j-Zp-AaH"/>
+                                            <action selector="hide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zrT-IF-oz6"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -68,15 +74,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="iEk-vh-11R" firstAttribute="centerX" secondItem="Ltr-rf-rhu" secondAttribute="centerX" id="3j0-Qz-y3M"/>
                             <constraint firstItem="Ltr-rf-rhu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8jM-ky-ST2"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iEk-vh-11R" secondAttribute="bottom" constant="8" id="DCU-fg-3JB"/>
-                            <constraint firstItem="iEk-vh-11R" firstAttribute="top" secondItem="Ltr-rf-rhu" secondAttribute="bottom" constant="8" symbolic="YES" id="NeN-59-PdF"/>
+                            <constraint firstAttribute="bottom" secondItem="iEk-vh-11R" secondAttribute="bottom" constant="20" symbolic="YES" id="Tl2-pI-FXW"/>
                             <constraint firstItem="Ltr-rf-rhu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="p4U-3H-EeG"/>
-                            <constraint firstItem="iEk-vh-11R" firstAttribute="centerX" secondItem="Ltr-rf-rhu" secondAttribute="centerX" id="vaB-Sc-eFj"/>
                             <constraint firstItem="Ltr-rf-rhu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wml-Ps-rBL"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="hNs-et-fbI" id="jsx-f2-QHX"/>
                         <outlet property="label" destination="s2Q-V1-jfK" id="Jmr-6T-daz"/>
                         <outlet property="textField" destination="PND-5q-4Zb" id="Nnq-to-N62"/>
                     </connections>
@@ -86,4 +92,7 @@
             <point key="canvasLocation" x="115.94202898550725" y="123.09782608695653"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Cat" width="1600" height="1200"/>
+    </resources>
 </document>
