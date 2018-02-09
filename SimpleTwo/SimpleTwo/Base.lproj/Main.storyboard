@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G18013" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,20 +19,20 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ltr-rf-rhu" userLabel="Main Stack">
-                                <rect key="frame" x="20" y="20" width="374" height="441.66666666666669"/>
+                                <rect key="frame" x="16" y="20" width="288" height="252"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2Q-V1-jfK">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="45.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="46"/>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="36"/>
                                         <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PND-5q-4Zb">
-                                        <rect key="frame" x="0.0" y="53.666666666666671" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="54" width="288" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -41,15 +41,15 @@
                                         </connections>
                                     </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cat" translatesAutoresizingMaskIntoConstraints="NO" id="hNs-et-fbI">
-                                        <rect key="frame" x="0.0" y="91.666666666666686" width="374" height="350"/>
+                                        <rect key="frame" x="0.0" y="92" width="288" height="160"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="350" id="jbb-10-zgk"/>
+                                            <constraint firstAttribute="height" constant="160" id="jbb-10-zgk"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iEk-vh-11R" userLabel="Buttons">
-                                <rect key="frame" x="165" y="686" width="84" height="30"/>
+                                <rect key="frame" x="118" y="518" width="84" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3Q-5C-h5Y">
                                         <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
