@@ -37,7 +37,11 @@ class MainViewController: UIViewController {
   @IBAction func likeButtonPressed() {
     guard salesCountLabel.isHidden else { return }
     let period = getMonthCount()
-    salesCountLabel.text = "You have sold 1000 apps in \(period) months"
+    
+    let formatString = NSLocalizedString("You have sold 1000 apps in %d months",
+                                         comment: "Time to sell 1000 apps")
+    let quantity = NumberFormatter.localizedString(from: 1000, number: .decimal)
+    salesCountLabel.text = String.localizedStringWithFormat(formatString, quantity, period)
     salesCountLabel.isHidden = false
     imageView.isHidden = false
     salesCountLabel.alpha = 0
@@ -56,6 +60,15 @@ class MainViewController: UIViewController {
         }
       }
     }
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+//    likeButton.setTitle(NSLocalizedString("You like?", comment: "You like the result?"),
+//                        for: .normal)
+    
+    imageView.image = UIImage(named: NSLocalizedString("imageName", comment: "name of the image file"))
   }
   
   private func getMonthCount() -> Int {
