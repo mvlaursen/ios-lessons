@@ -6,5 +6,4 @@
   Copyright © 2018 Razeware. All rights reserved.
 */
 
-"You like?" = "¿Es bueno?";
-"imageName" = "MeGusta";
+"ImageView.imageName" = "MeGusta";

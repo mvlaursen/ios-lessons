@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
     guard salesCountLabel.isHidden else { return }
     let period = getMonthCount()
     
-    let formatString = NSLocalizedString("You have sold 1000 apps in %d months",
+    let formatString = NSLocalizedString("ImageView.appsSoldInMonths",
                                          comment: "Time to sell 1000 apps")
     let quantity = NumberFormatter.localizedString(from: 1000, number: .decimal)
     salesCountLabel.text = String.localizedStringWithFormat(formatString, quantity, period)
@@ -65,10 +65,7 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    likeButton.setTitle(NSLocalizedString("You like?", comment: "You like the result?"),
-//                        for: .normal)
-    
-    imageView.image = UIImage(named: NSLocalizedString("imageName", comment: "name of the image file"))
+    imageView.image = UIImage(named: NSLocalizedString("ImageView.imageName", comment: "name of the image file"))
   }
   
   private func getMonthCount() -> Int {

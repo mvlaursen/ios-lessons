@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>You have sold 1000 apps in %d months</key>
+	<key>ImageView.appsSoldInMonths</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
 		<string>Has vendido %@ aplicaciones en %#@months@</string>
