@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  iLikeIt
+
+  Created by Mike Laursen on 5/23/18.
+  Copyright © 2018 Razeware. All rights reserved.
+*/
+CFBundleDisplayName = "MeGusta";

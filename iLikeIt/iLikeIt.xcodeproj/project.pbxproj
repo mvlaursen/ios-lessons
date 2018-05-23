@@ -10,6 +10,7 @@
 		18D83EDC1FC9D23B001DB734 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D83EDB1FC9D23B001DB734 /* MainViewController.swift */; };
 		3B74EE6920B4E05A00677C51 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B74EE6B20B4E05A00677C51 /* Localizable.strings */; };
 		3B74EE6F20B5E53600677C51 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 3B74EE7120B5E53600677C51 /* Localizable.stringsdict */; };
+		3B74EE7820B5F05600677C51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B74EE7A20B5F05600677C51 /* InfoPlist.strings */; };
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F20A1F4A9144005CD714 /* Assets.xcassets */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
@@ -26,6 +27,9 @@
 		3B74EE7320B5EE4000677C51 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		3B74EE7420B5EE4000677C51 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3B74EE7520B5EE4000677C51 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = pl; path = pl.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		3B74EE7920B5F05600677C51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B74EE7B20B5F06100677C51 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3B74EE7C20B5F06200677C51 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2A5F2001F4A9144005CD714 /* iLikeIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iLikeIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A5F2081F4A9144005CD714 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2A5F20A1F4A9144005CD714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 				3B74EE6B20B4E05A00677C51 /* Localizable.strings */,
 				3B74EE7120B5E53600677C51 /* Localizable.stringsdict */,
 				D2A5F20F1F4A9144005CD714 /* Info.plist */,
+				3B74EE7A20B5F05600677C51 /* InfoPlist.strings */,
 			);
 			path = iLikeIt;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */,
+				3B74EE7820B5F05600677C51 /* InfoPlist.strings in Resources */,
 				3B74EE6920B4E05A00677C51 /* Localizable.strings in Resources */,
 				D2D9196A1F65FEC20011F7B0 /* LaunchScreen.xib in Resources */,
 				3B74EE6F20B5E53600677C51 /* Localizable.stringsdict in Resources */,
@@ -180,6 +186,16 @@
 				3B74EE7520B5EE4000677C51 /* pl */,
 			);
 			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+		3B74EE7A20B5F05600677C51 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B74EE7920B5F05600677C51 /* en */,
+				3B74EE7B20B5F06100677C51 /* es */,
+				3B74EE7C20B5F06200677C51 /* pl */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		D2A5F2071F4A9144005CD714 /* Main.storyboard */ = {
