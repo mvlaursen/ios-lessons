@@ -12,6 +12,26 @@
 
 @end
 
+// ===== Foo =====
+
+@interface Foo: NSObject
+@property int x;
+@end
+
+@interface Foo ()
+{
+    int y;
+}
+@end
+
+@implementation Foo
+- (void)manipulateY: (int)newValue {
+    y = newValue;
+}
+@end
+
+// ===== Foo =====
+
 @implementation ObjectiveCPlaygoundTests
 
 - (void)setUp {
@@ -25,6 +45,10 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    Foo *foo = [[Foo alloc] init];
+    foo.x = 20;
+    [foo manipulateY: 5];
 }
 
 - (void)testPerformanceExample {
