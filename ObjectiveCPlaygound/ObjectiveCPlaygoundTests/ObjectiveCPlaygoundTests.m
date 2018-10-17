@@ -58,6 +58,21 @@
     NSNumber *scoreA = [NSNumber numberWithDouble:55.5];
     NSNumber *scoreB = [NSNumber numberWithDouble:22.2];
     [foo declareWinnerWithPlayerAScore:scoreA playerBScore:scoreB];
+    
+    NSArray *arr1 = nil; //@[@"Hello", @"world"];
+    NSArray *arr2 = [NSArray arrayWithArray:arr1];
+    NSLog(@"%@", arr2);
+    
+    NSMutableSet *s1 = [NSMutableSet setWithArray:@[@"Apple", @"Banana", @"Orange"]];
+//    NSSet *s2 = [NSSet setWithArray:@[@"Banana", @"Kumquat"]];
+//    [s1 intersectSet:s2];
+//    NSLog(@"==> ==> ==> %@", s1);
+    
+    NSNumber *n1 = [NSNumber numberWithInt:40];
+    NSLog(@"==> ==> ==> %d", n1.intValue);
+    
+    for (NSString *s in s1)
+        NSLog(@"==> ==> ==> %@", s);
 }
 
 - (void)testPerformanceExample {
