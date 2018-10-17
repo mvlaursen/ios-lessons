@@ -25,9 +25,15 @@
 @end
 
 @implementation Foo
+
 - (void)manipulateY: (int)newValue {
     y = newValue;
 }
+
+- (void)declareWinnerWithPlayerAScore:(NSNumber *)scoreA playerBScore:(NSNumber *)scoreB {
+    // Do nothing.
+}
+
 @end
 
 // ===== Foo =====
@@ -49,6 +55,9 @@
     Foo *foo = [[Foo alloc] init];
     foo.x = 20;
     [foo manipulateY: 5];
+    NSNumber *scoreA = [NSNumber numberWithDouble:55.5];
+    NSNumber *scoreB = [NSNumber numberWithDouble:22.2];
+    [foo declareWinnerWithPlayerAScore:scoreA playerBScore:scoreB];
 }
 
 - (void)testPerformanceExample {
