@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,20 +11,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retrobg" translatesAutoresizingMaskIntoConstraints="NO" id="3zH-xR-EqU" userLabel="Background">
-                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tapper" translatesAutoresizingMaskIntoConstraints="NO" id="dGo-z7-65P" userLabel="LogoImg">
-                                <rect key="frame" x="16" y="36" width="288" height="62"/>
+                                <rect key="frame" x="16" y="36" width="568" height="122.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dGo-z7-65P" secondAttribute="height" multiplier="144:31" id="DUj-Qq-qXG"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="How many taps to win?" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="609-Qx-t02" userLabel="HowManyTapsTxt">
-                                <rect key="frame" x="16" y="277" width="288" height="30"/>
+                                <rect key="frame" x="16" y="260" width="568" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="P5w-jI-5OM"/>
                                 </constraints>
@@ -36,7 +33,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVB-HN-dnX" userLabel="PlayBtn">
-                                <rect key="frame" x="16" y="323" width="288" height="141"/>
+                                <rect key="frame" x="16" y="306" width="568" height="278"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FVB-HN-dnX" secondAttribute="height" multiplier="96:47" id="cFM-zV-QNR"/>
                                 </constraints>
@@ -46,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ux-pk-HgS">
-                                <rect key="frame" x="96" y="323" width="128" height="141"/>
+                                <rect key="frame" x="173.5" y="306" width="253" height="278"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9ux-pk-HgS" secondAttribute="height" multiplier="244:268" id="M4W-eb-Kjf"/>
                                 </constraints>
@@ -78,9 +75,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="CoinBtn" destination="9ux-pk-HgS" id="qG4-dW-rHZ"/>
                         <outlet property="HowManyTapsTxt" destination="609-Qx-t02" id="AT8-WA-AI7"/>
                         <outlet property="PlayBtn" destination="FVB-HN-dnX" id="pjb-4I-zgt"/>
-                        <outlet property="coinBtn" destination="9ux-pk-HgS" id="qG4-dW-rHZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
