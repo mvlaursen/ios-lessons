@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,70 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retrobg" translatesAutoresizingMaskIntoConstraints="NO" id="3zH-xR-EqU" userLabel="Background">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tapper" translatesAutoresizingMaskIntoConstraints="NO" id="dGo-z7-65P" userLabel="LogoImg">
+                                <rect key="frame" x="16" y="36" width="288" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dGo-z7-65P" secondAttribute="height" multiplier="144:31" id="DUj-Qq-qXG"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVB-HN-dnX" userLabel="PlayBtn">
+                                <rect key="frame" x="16" y="323" width="288" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FVB-HN-dnX" secondAttribute="height" multiplier="96:47" id="cFM-zV-QNR"/>
+                                </constraints>
+                                <state key="normal" title="PlayBtn" image="playbtn"/>
+                                <connections>
+                                    <action selector="onPlayBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ELO-xn-5ar"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="How many taps to win?" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="609-Qx-t02" userLabel="HowManyTapsTxt">
+                                <rect key="frame" x="16" y="277" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="P5w-jI-5OM"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FVB-HN-dnX" secondAttribute="bottom" constant="16" id="7jw-FR-icP"/>
+                            <constraint firstItem="dGo-z7-65P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="DSj-n4-OdH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="609-Qx-t02" secondAttribute="trailing" constant="16" id="Fyl-Nu-nLQ"/>
+                            <constraint firstItem="609-Qx-t02" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IqU-pO-V9X"/>
+                            <constraint firstItem="3zH-xR-EqU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QNx-pT-rhA"/>
+                            <constraint firstItem="3zH-xR-EqU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YmZ-Ua-nEO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGo-z7-65P" secondAttribute="trailing" constant="16" id="biR-J3-5gh"/>
+                            <constraint firstItem="FVB-HN-dnX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eSN-h9-a63"/>
+                            <constraint firstItem="dGo-z7-65P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sho-8m-Mee"/>
+                            <constraint firstItem="3zH-xR-EqU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uNc-Gh-kPy"/>
+                            <constraint firstItem="FVB-HN-dnX" firstAttribute="top" secondItem="609-Qx-t02" secondAttribute="bottom" constant="16" id="yMH-Lq-QiY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FVB-HN-dnX" secondAttribute="trailing" constant="16" id="zAM-yc-LqZ"/>
+                            <constraint firstItem="3zH-xR-EqU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zgf-N3-nPj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="HowManyTapsTxt" destination="609-Qx-t02" id="AT8-WA-AI7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="46.875" y="35"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Tapper" width="497" height="107"/>
+        <image name="playbtn" width="356" height="175"/>
+        <image name="retrobg" width="800" height="800"/>
+    </resources>
 </document>
