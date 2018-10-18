@@ -36,10 +36,25 @@
 }
 
 - (void)testStepper {
-    XCUIElement *incrementButton = [[XCUIApplication alloc] init].steppers[@"goal_stepper"].buttons[@"Increment"];
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElement *goalStepper = app.steppers[@"goal_stepper"];
+    XCUIElement *goalTextEdit = app.textFields[@"goal_text_field"];
     
-    for (int i = 0; i < 10; i++)
+    XCTAssert([self tapsGoal:goalTextEdit] == 10);
+    
+    XCUIElement *incrementButton = goalStepper.buttons[@"Increment"];
+    for (int i = 0; i < 11; i++)
         [incrementButton tap];
+
+    XCTAssert([self tapsGoal:goalTextEdit] == 20);
+}
+
+#pragma mark Utility
+
+- (int)tapsGoal: (XCUIElement *)goalTextEdit {
+    NSString *goalText = (NSString *)goalTextEdit.value;
+    int tapsGoal = goalText.intValue;
+    return tapsGoal;
 }
 
 @end
