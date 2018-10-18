@@ -24,13 +24,17 @@
 }
 
 - (void)testIsEqualToDateIgnoringTime {
-    // TODO: Write better tests!
-    
+    // An NSDate should always be equal to itself.
     NSDate *date = [NSDate date];
     XCTAssert([date isEqualToDateIgnoringTime:date]);
+    
+    // The distant past and distant future should definitely not be equal.
+    NSDate *datePast = [NSDate distantPast];
+    NSDate *dateFuture = [NSDate distantFuture];
+    XCTAssert(![datePast isEqualToDateIgnoringTime:dateFuture]);
+    
+    // These are kind of dumb tests, but this framework is just being done as
+    // an exercise.
 }
-
-// TODO: In addition to writing unit tests, make sure I can use the library in
-// an app.
 
 @end

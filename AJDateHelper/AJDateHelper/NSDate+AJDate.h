@@ -11,14 +11,17 @@
 
 #import <Foundation/Foundation.h>
 
-// TODO: Why was this added automatically?
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDate (AJDate)
 
 #pragma mark Comparing Dates
 
-// TODO: Port the comment from Swift.
+/*
+ Returns true if dates are equal, ignoring time of day.
+ @param NSDate to compare
+ @return YES if dates are equal, ignoring time of day
+ */
 - (BOOL)isEqualToDateIgnoringTime: (NSDate *)date;
 
 @end
