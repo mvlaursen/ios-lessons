@@ -35,4 +35,11 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
+- (void)testStepper {
+    XCUIElement *incrementButton = [[XCUIApplication alloc] init].steppers[@"goal_stepper"].buttons[@"Increment"];
+    
+    for (int i = 0; i < 10; i++)
+        [incrementButton tap];
+}
+
 @end

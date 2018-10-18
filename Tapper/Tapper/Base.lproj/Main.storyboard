@@ -70,6 +70,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="94" id="VW6-bd-I0u"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="goal_stepper"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="onStepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="oaX-od-m50"/>
                                         </connections>
