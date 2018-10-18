@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,18 +27,6 @@
                                     <constraint firstAttribute="width" secondItem="dGo-z7-65P" secondAttribute="height" multiplier="144:31" id="DUj-Qq-qXG"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="How many taps to win?" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="609-Qx-t02" userLabel="HowManyTapsTxt">
-                                <rect key="frame" x="16" y="229" width="288" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="P5w-jI-5OM"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
-                                <connections>
-                                    <action selector="onHowManyTapsDidEndOnExit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="Sg1-17-e0f"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVB-HN-dnX" userLabel="PlayBtn">
                                 <rect key="frame" x="16" y="323" width="288" height="141"/>
                                 <constraints>
@@ -58,15 +47,47 @@
                                     <action selector="onCoinBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eWN-gA-zS8"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="vkB-YP-F8U" userLabel="Goal View">
+                                <rect key="frame" x="56.5" y="286" width="207.5" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgN-9y-xHQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="39.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6U-2K-InV">
+                                        <rect key="frame" x="47.5" y="0.0" width="58" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="58" id="TUd-53-fZk"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="AH3-hB-YRs">
+                                        <rect key="frame" x="113.5" y="0.0" width="94" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="94" id="VW6-bd-I0u"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="onStepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="oaX-od-m50"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="XjP-zJ-3ed"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="vkB-YP-F8U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0oy-JN-eQc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FVB-HN-dnX" secondAttribute="bottom" constant="16" id="7jw-FR-icP"/>
                             <constraint firstItem="dGo-z7-65P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="DSj-n4-OdH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9ux-pk-HgS" secondAttribute="bottom" constant="16" id="E8X-u1-Hum"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="609-Qx-t02" secondAttribute="trailing" constant="16" id="Fyl-Nu-nLQ"/>
-                            <constraint firstItem="609-Qx-t02" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IqU-pO-V9X"/>
                             <constraint firstItem="3zH-xR-EqU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QNx-pT-rhA"/>
+                            <constraint firstItem="FVB-HN-dnX" firstAttribute="top" secondItem="vkB-YP-F8U" secondAttribute="bottom" constant="8" symbolic="YES" id="XNs-Db-ZAo"/>
                             <constraint firstItem="3zH-xR-EqU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YmZ-Ua-nEO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGo-z7-65P" secondAttribute="trailing" constant="16" id="biR-J3-5gh"/>
                             <constraint firstItem="FVB-HN-dnX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eSN-h9-a63"/>
@@ -74,7 +95,6 @@
                             <constraint firstItem="9ux-pk-HgS" firstAttribute="height" secondItem="FVB-HN-dnX" secondAttribute="height" id="qe7-Do-S2g"/>
                             <constraint firstItem="dGo-z7-65P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sho-8m-Mee"/>
                             <constraint firstItem="3zH-xR-EqU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uNc-Gh-kPy"/>
-                            <constraint firstItem="FVB-HN-dnX" firstAttribute="top" secondItem="609-Qx-t02" secondAttribute="bottom" constant="64" id="yMH-Lq-QiY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FVB-HN-dnX" secondAttribute="trailing" constant="16" id="zAM-yc-LqZ"/>
                             <constraint firstItem="3zH-xR-EqU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zgf-N3-nPj"/>
                         </constraints>
@@ -82,8 +102,9 @@
                     </view>
                     <connections>
                         <outlet property="CoinBtn" destination="9ux-pk-HgS" id="qG4-dW-rHZ"/>
-                        <outlet property="HowManyTapsTxt" destination="609-Qx-t02" id="AT8-WA-AI7"/>
                         <outlet property="PlayBtn" destination="FVB-HN-dnX" id="pjb-4I-zgt"/>
+                        <outlet property="goalStepper" destination="AH3-hB-YRs" id="pHW-G3-3uY"/>
+                        <outlet property="goalTxtFld" destination="T6U-2K-InV" id="qBd-Fl-bxB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,13 +10,15 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UIStepper *goalStepper;
+@property (weak, nonatomic) IBOutlet UITextField *goalTxtFld;
 @property (weak, nonatomic) IBOutlet UIButton *CoinBtn;
 @property (weak, nonatomic) IBOutlet UIButton *PlayBtn;
-@property (weak, nonatomic) IBOutlet UITextField *HowManyTapsTxt;
+
 
 @property (nonatomic) BOOL isPlaying;
 @property (strong, nonatomic) NSNumber *currentTaps;
-@property (strong, nonatomic) NSNumber *maxTaps;
+@property (strong, nonatomic) NSNumber *tapsGoal;
 
 @end
 
@@ -26,42 +28,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _HowManyTapsTxt.delegate = self;
     _isPlaying = NO;
     _currentTaps = 0;
-    _maxTaps = 0;
+    _tapsGoal = [NSNumber numberWithInteger:10];
+    _goalStepper.value = 10;
     [self updateUI];
 }
 
 - (IBAction)onCoinBtnTapped:(UIButton *)sender {
-    if (_maxTaps.intValue < 0)
-        _maxTaps = [NSNumber numberWithInteger:10];
+    if (_tapsGoal.intValue < 0)
+        _tapsGoal = [NSNumber numberWithInteger:10];
     
     int intValue = _currentTaps.intValue;
     intValue++;
     _currentTaps = [NSNumber numberWithInteger:intValue];
     
-    if (_currentTaps >= _maxTaps) {
+    if (_currentTaps >= _tapsGoal) {
         _isPlaying = NO;
         [self updateUI];
     }
 }
 
-- (IBAction)onHowManyTapsDidEndOnExit:(UITextField *)sender {
-    // It would be better to use a Stepper control, but the assignment is to
-    // convert the Swift app as it was written.
-    
-    // If the contents of the text field cannot be converted to a double, zero
-    // is returned.
-    
-    double doubleValue = [sender.text doubleValue];
-    int intValue = floor(doubleValue);
-    _maxTaps = [NSNumber numberWithInteger:intValue];
-    _HowManyTapsTxt.text = [self formatMaxTaps];
-}
-
 - (IBAction)onPlayBtnTapped:(UIButton *)sender {
     _isPlaying = YES;
+    [self updateUI];
+}
+
+- (IBAction)onStepperValueChanged:(UIStepper *)sender {
+    _tapsGoal = [NSNumber numberWithInteger:sender.value];
     [self updateUI];
 }
 
@@ -73,28 +67,17 @@
         _CoinBtn.hidden = NO;
         _PlayBtn.enabled = NO;
         _PlayBtn.hidden = YES;
+        _goalStepper.enabled = NO;
     } else {
         _CoinBtn.enabled = NO;
         _CoinBtn.hidden = YES;
         _PlayBtn.enabled = YES;
         _PlayBtn.hidden = NO;
+        _goalStepper.enabled = YES;
     }
-}
-
-- (NSString *)formatMaxTaps {
-    int intValue = _maxTaps.intValue;
     
-    if (intValue > 0)
-        return [NSString stringWithFormat:@"%d", intValue];
-    else
-        return @"How many taps to win?";
-}
-
-#pragma mark UITextFieldDelegate
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    _HowManyTapsTxt.text = [self formatMaxTaps];
-    return YES;
+    _goalStepper.value = _tapsGoal.intValue;
+    _goalTxtFld.text = [NSString stringWithFormat:@"%d", _tapsGoal.intValue];
 }
 
 @end
