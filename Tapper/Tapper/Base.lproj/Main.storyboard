@@ -26,6 +26,15 @@
                                     <constraint firstAttribute="width" secondItem="dGo-z7-65P" secondAttribute="height" multiplier="144:31" id="DUj-Qq-qXG"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="How many taps to win?" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="609-Qx-t02" userLabel="HowManyTapsTxt">
+                                <rect key="frame" x="16" y="277" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="P5w-jI-5OM"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVB-HN-dnX" userLabel="PlayBtn">
                                 <rect key="frame" x="16" y="323" width="288" height="141"/>
                                 <constraints>
@@ -36,26 +45,30 @@
                                     <action selector="onPlayBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ELO-xn-5ar"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="How many taps to win?" borderStyle="roundedRect" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="609-Qx-t02" userLabel="HowManyTapsTxt">
-                                <rect key="frame" x="16" y="277" width="288" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ux-pk-HgS">
+                                <rect key="frame" x="96" y="323" width="128" height="141"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="P5w-jI-5OM"/>
+                                    <constraint firstAttribute="width" secondItem="9ux-pk-HgS" secondAttribute="height" multiplier="244:268" id="M4W-eb-Kjf"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <state key="normal" title="CoinBtn" image="coin"/>
+                                <connections>
+                                    <action selector="onCoinBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eWN-gA-zS8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FVB-HN-dnX" secondAttribute="bottom" constant="16" id="7jw-FR-icP"/>
                             <constraint firstItem="dGo-z7-65P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="DSj-n4-OdH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9ux-pk-HgS" secondAttribute="bottom" constant="16" id="E8X-u1-Hum"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="609-Qx-t02" secondAttribute="trailing" constant="16" id="Fyl-Nu-nLQ"/>
                             <constraint firstItem="609-Qx-t02" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IqU-pO-V9X"/>
                             <constraint firstItem="3zH-xR-EqU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QNx-pT-rhA"/>
                             <constraint firstItem="3zH-xR-EqU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YmZ-Ua-nEO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGo-z7-65P" secondAttribute="trailing" constant="16" id="biR-J3-5gh"/>
                             <constraint firstItem="FVB-HN-dnX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eSN-h9-a63"/>
+                            <constraint firstItem="9ux-pk-HgS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lqu-Kj-Idd"/>
+                            <constraint firstItem="9ux-pk-HgS" firstAttribute="height" secondItem="FVB-HN-dnX" secondAttribute="height" id="qe7-Do-S2g"/>
                             <constraint firstItem="dGo-z7-65P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sho-8m-Mee"/>
                             <constraint firstItem="3zH-xR-EqU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uNc-Gh-kPy"/>
                             <constraint firstItem="FVB-HN-dnX" firstAttribute="top" secondItem="609-Qx-t02" secondAttribute="bottom" constant="16" id="yMH-Lq-QiY"/>
@@ -66,6 +79,8 @@
                     </view>
                     <connections>
                         <outlet property="HowManyTapsTxt" destination="609-Qx-t02" id="AT8-WA-AI7"/>
+                        <outlet property="PlayBtn" destination="FVB-HN-dnX" id="pjb-4I-zgt"/>
+                        <outlet property="coinBtn" destination="9ux-pk-HgS" id="qG4-dW-rHZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,6 +90,7 @@
     </scenes>
     <resources>
         <image name="Tapper" width="497" height="107"/>
+        <image name="coin" width="244" height="268"/>
         <image name="playbtn" width="356" height="175"/>
         <image name="retrobg" width="800" height="800"/>
     </resources>

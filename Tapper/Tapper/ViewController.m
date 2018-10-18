@@ -9,8 +9,14 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *coinBtn;
+@property (weak, nonatomic) IBOutlet UIButton *PlayBtn;
 @property (weak, nonatomic) IBOutlet UITextField *HowManyTapsTxt;
-@property (strong, nonatomic) NSNumber *tapCount;
+
+@property (strong, nonatomic) NSNumber *currentTaps;
+@property (strong, nonatomic) NSNumber *maxTaps;
+
 @end
 
 @implementation ViewController
@@ -19,15 +25,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.tapCount = 0;
-    self.HowManyTapsTxt.text = [NSString stringWithFormat:@"%d", self.tapCount.intValue];
+    _currentTaps = 0;
+    _maxTaps = 0;
+}
+
+- (IBAction)onCoinBtnTapped:(UIButton *)sender {
 }
 
 - (IBAction)onPlayBtnTapped:(UIButton *)sender {
-    int tapCount = self.tapCount.intValue;
-    tapCount++;
-    self.tapCount = [NSNumber numberWithInteger:tapCount];
-    self.HowManyTapsTxt.text = [NSString stringWithFormat:@"%d", self.tapCount.intValue];
+    
 }
 
 @end
