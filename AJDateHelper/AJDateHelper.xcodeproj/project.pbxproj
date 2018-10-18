@@ -10,6 +10,8 @@
 		3B0E43A121792D0A0020F9FA /* AJDateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B0E439721792D0A0020F9FA /* AJDateHelper.framework */; };
 		3B0E43A621792D0A0020F9FA /* AJDateHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E43A521792D0A0020F9FA /* AJDateHelperTests.m */; };
 		3B0E43A821792D0A0020F9FA /* AJDateHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B0E439A21792D0A0020F9FA /* AJDateHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B0E43B321792FA60020F9FA /* NSDate+AJDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B0E43B121792FA60020F9FA /* NSDate+AJDate.h */; };
+		3B0E43B421792FA60020F9FA /* NSDate+AJDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0E43B221792FA60020F9FA /* NSDate+AJDate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		3B0E43A021792D0A0020F9FA /* AJDateHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AJDateHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0E43A521792D0A0020F9FA /* AJDateHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AJDateHelperTests.m; sourceTree = "<group>"; };
 		3B0E43A721792D0A0020F9FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B0E43B121792FA60020F9FA /* NSDate+AJDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+AJDate.h"; sourceTree = "<group>"; };
+		3B0E43B221792FA60020F9FA /* NSDate+AJDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+AJDate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				3B0E439A21792D0A0020F9FA /* AJDateHelper.h */,
 				3B0E439B21792D0A0020F9FA /* Info.plist */,
+				3B0E43B121792FA60020F9FA /* NSDate+AJDate.h */,
+				3B0E43B221792FA60020F9FA /* NSDate+AJDate.m */,
 			);
 			path = AJDateHelper;
 			sourceTree = "<group>";
@@ -93,6 +99,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0E43B321792FA60020F9FA /* NSDate+AJDate.h in Headers */,
 				3B0E43A821792D0A0020F9FA /* AJDateHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0E43B421792FA60020F9FA /* NSDate+AJDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

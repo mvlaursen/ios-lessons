@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "NSDate+AJDate.h"
 
 @interface AJDateHelperTests : XCTestCase
 
@@ -22,16 +23,14 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testIsEqualToDateIgnoringTime {
+    // TODO: Write better tests!
+    
+    NSDate *date = [NSDate date];
+    XCTAssert([date isEqualToDateIgnoringTime:date]);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
+// TODO: In addition to writing unit tests, make sure I can use the library in
+// an app.
 
 @end

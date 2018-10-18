@@ -15,5 +15,4 @@ FOUNDATION_EXPORT double AJDateHelperVersionNumber;
 FOUNDATION_EXPORT const unsigned char AJDateHelperVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <AJDateHelper/PublicHeader.h>
-
-
+#import <AJDateHelper/NSDate+AJDate.h>
