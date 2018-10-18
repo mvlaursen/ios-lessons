@@ -79,23 +79,40 @@
                                     <constraint firstAttribute="height" constant="29" id="XjP-zJ-3ed"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taps Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRv-uT-L95" userLabel="TapsLbl">
+                                <rect key="frame" x="51" y="211.5" width="218" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The world's dumbest game?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqd-PD-pMm">
+                                <rect key="frame" x="16" y="106" width="288" height="20.5"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <color key="textColor" red="0.99607843137254903" green="0.9137254901960784" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vkB-YP-F8U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0oy-JN-eQc"/>
+                            <constraint firstItem="kRv-uT-L95" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2wG-am-Bq5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FVB-HN-dnX" secondAttribute="bottom" constant="16" id="7jw-FR-icP"/>
                             <constraint firstItem="dGo-z7-65P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="DSj-n4-OdH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9ux-pk-HgS" secondAttribute="bottom" constant="16" id="E8X-u1-Hum"/>
+                            <constraint firstItem="kRv-uT-L95" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lh7-ed-d5f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uqd-PD-pMm" secondAttribute="trailing" constant="16" id="Mnh-tZ-ePZ"/>
                             <constraint firstItem="3zH-xR-EqU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QNx-pT-rhA"/>
                             <constraint firstItem="FVB-HN-dnX" firstAttribute="top" secondItem="vkB-YP-F8U" secondAttribute="bottom" constant="8" symbolic="YES" id="XNs-Db-ZAo"/>
                             <constraint firstItem="3zH-xR-EqU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YmZ-Ua-nEO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dGo-z7-65P" secondAttribute="trailing" constant="16" id="biR-J3-5gh"/>
                             <constraint firstItem="FVB-HN-dnX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eSN-h9-a63"/>
                             <constraint firstItem="9ux-pk-HgS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lqu-Kj-Idd"/>
+                            <constraint firstItem="uqd-PD-pMm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pRR-03-cyk"/>
                             <constraint firstItem="9ux-pk-HgS" firstAttribute="height" secondItem="FVB-HN-dnX" secondAttribute="height" id="qe7-Do-S2g"/>
                             <constraint firstItem="dGo-z7-65P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sho-8m-Mee"/>
                             <constraint firstItem="3zH-xR-EqU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uNc-Gh-kPy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FVB-HN-dnX" secondAttribute="trailing" constant="16" id="zAM-yc-LqZ"/>
+                            <constraint firstItem="uqd-PD-pMm" firstAttribute="top" secondItem="dGo-z7-65P" secondAttribute="bottom" constant="8" id="zFo-Ch-jPT"/>
                             <constraint firstItem="3zH-xR-EqU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zgf-N3-nPj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -103,6 +120,7 @@
                     <connections>
                         <outlet property="CoinBtn" destination="9ux-pk-HgS" id="qG4-dW-rHZ"/>
                         <outlet property="PlayBtn" destination="FVB-HN-dnX" id="pjb-4I-zgt"/>
+                        <outlet property="TapsLbl" destination="kRv-uT-L95" id="8Lz-H8-3pg"/>
                         <outlet property="goalStepper" destination="AH3-hB-YRs" id="pHW-G3-3uY"/>
                         <outlet property="goalTxtFld" destination="T6U-2K-InV" id="qBd-Fl-bxB"/>
                     </connections>

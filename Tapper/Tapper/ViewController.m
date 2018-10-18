@@ -14,11 +14,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *goalTxtFld;
 @property (weak, nonatomic) IBOutlet UIButton *CoinBtn;
 @property (weak, nonatomic) IBOutlet UIButton *PlayBtn;
+@property (weak, nonatomic) IBOutlet UILabel *TapsLbl;
 
 
 @property (nonatomic) BOOL isPlaying;
-@property (strong, nonatomic) NSNumber *currentTaps;
 @property (strong, nonatomic) NSNumber *tapsGoal;
+@property (strong, nonatomic) NSNumber *taps;
 
 @end
 
@@ -29,28 +30,26 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _isPlaying = NO;
-    _currentTaps = 0;
+    _taps = 0;
     _tapsGoal = [NSNumber numberWithInteger:10];
     _goalStepper.value = 10;
     [self updateUI];
 }
 
 - (IBAction)onCoinBtnTapped:(UIButton *)sender {
-    if (_tapsGoal.intValue < 0)
-        _tapsGoal = [NSNumber numberWithInteger:10];
+    int intValue = _taps.intValue;
+    _taps = [NSNumber numberWithInteger:++intValue];
     
-    int intValue = _currentTaps.intValue;
-    intValue++;
-    _currentTaps = [NSNumber numberWithInteger:intValue];
-    
-    if (_currentTaps >= _tapsGoal) {
+    if (intValue >= _tapsGoal.intValue) {
         _isPlaying = NO;
-        [self updateUI];
     }
+
+    [self updateUI];
 }
 
 - (IBAction)onPlayBtnTapped:(UIButton *)sender {
     _isPlaying = YES;
+    _taps = [NSNumber numberWithInteger:0];
     [self updateUI];
 }
 
@@ -78,6 +77,7 @@
     
     _goalStepper.value = _tapsGoal.intValue;
     _goalTxtFld.text = [NSString stringWithFormat:@"%d", _tapsGoal.intValue];
+    _TapsLbl.text = [NSString stringWithFormat:@"%d", _taps.intValue];
 }
 
 @end
