@@ -10,6 +10,7 @@
 #import "NSDate+AJDate.h"
 
 const NSTimeInterval kTimeIntervalOneDay = 86400.0;
+const NSTimeInterval kTimeIntervalOneWeek = 604800.0;
 
 @interface AJDateHelperTests : XCTestCase
 @end
@@ -59,6 +60,18 @@ const NSTimeInterval kTimeIntervalOneDay = 86400.0;
     
     NSDate *yesterday = [now dateByAddingTimeInterval:-kTimeIntervalOneDay];
     XCTAssert([yesterday isYesterday]);
+}
+
+- (void)testIsSameWeekAsDate {
+    NSDate *now = [NSDate date];
+    XCTAssert([now isSameWeekAsDate:now]);
+    
+    // This test could fail if it executes exactly when the week is changing.
+    NSDate *almostNow = [now dateByAddingTimeInterval:1.0];
+    XCTAssert([now isSameWeekAsDate:almostNow]);
+
+    NSDate *oneWeekFromNow = [now dateByAddingTimeInterval:kTimeIntervalOneWeek];
+    XCTAssertFalse([now isSameWeekAsDate:oneWeekFromNow]);
 }
 
 @end

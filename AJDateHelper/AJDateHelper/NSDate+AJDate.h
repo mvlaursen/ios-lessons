@@ -38,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)isYesterday;
 
+/*
+ @return YES if dates are in the same week.
+ */
+- (BOOL)isSameWeekAsDate: (NSDate *)date;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,6 +9,7 @@
 #import "NSDate+AJDate.h"
 
 const NSTimeInterval kTimeIntervalOneDay = 86400.0;
+const NSTimeInterval kTimeIntervalOneWeek = 604800.0;
 
 @implementation NSDate (AJDate)
 
@@ -34,6 +35,19 @@ const NSTimeInterval kTimeIntervalOneDay = 86400.0;
 
 - (BOOL)isYesterday {
     return [self isEqualToDateIgnoringTime:[[NSDate date] dateByAddingTimeInterval:-kTimeIntervalOneDay]];
+}
+
+- (BOOL)isSameWeekAsDate: (NSDate *)date {
+    NSDateComponents *comp1 = [[NSCalendar currentCalendar] components:NSCalendarUnitWeekOfYear fromDate:self];
+    NSDateComponents *comp2 = [[NSCalendar currentCalendar] components:NSCalendarUnitWeekOfYear | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:date];
+    
+    // Must be the same week. 12/31 and 1/1 will both be week "1" if they are
+    // in the same week.
+    if (comp1.weekOfYear != comp2.weekOfYear)
+        return NO;
+    
+    // Must have a time interval less than one week.
+    return abs([self timeIntervalSinceDate:date] < kTimeIntervalOneWeek);
 }
 
 @end
