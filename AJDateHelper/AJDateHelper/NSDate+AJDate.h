@@ -18,11 +18,25 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Comparing Dates
 
 /*
- Returns true if dates are equal, ignoring time of day.
  @param NSDate to compare
  @return YES if dates are equal, ignoring time of day
  */
 - (BOOL)isEqualToDateIgnoringTime: (NSDate *)date;
+
+/*
+ @return YES if date is today.
+ */
+- (BOOL)isToday;
+
+/*
+ @return YES if date is tomorrow.
+ */
+- (BOOL)isTomorrow;
+
+/*
+ @return YES if date is yesterday.
+ */
+- (BOOL)isYesterday;
 
 @end
 

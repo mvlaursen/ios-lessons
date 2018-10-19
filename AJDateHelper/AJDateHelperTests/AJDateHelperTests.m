@@ -9,8 +9,9 @@
 #import <XCTest/XCTest.h>
 #import "NSDate+AJDate.h"
 
-@interface AJDateHelperTests : XCTestCase
+const NSTimeInterval kTimeIntervalOneDay = 86400.0;
 
+@interface AJDateHelperTests : XCTestCase
 @end
 
 @implementation AJDateHelperTests
@@ -24,17 +25,40 @@
 }
 
 - (void)testIsEqualToDateIgnoringTime {
-    // An NSDate should always be equal to itself.
-    NSDate *date = [NSDate date];
-    XCTAssert([date isEqualToDateIgnoringTime:date]);
+    NSDate *now = [NSDate date];
+    XCTAssert([now isEqualToDateIgnoringTime:now]);
     
-    // The distant past and distant future should definitely not be equal.
+    // This test could fail if it executes exactly when the day is changing.
+    NSDate *almostNow = [now dateByAddingTimeInterval:1.0];
+    XCTAssert([now isEqualToDateIgnoringTime:almostNow]);
+    
     NSDate *datePast = [NSDate distantPast];
     NSDate *dateFuture = [NSDate distantFuture];
-    XCTAssert(![datePast isEqualToDateIgnoringTime:dateFuture]);
+    XCTAssertFalse([datePast isEqualToDateIgnoringTime:dateFuture]);
+}
+
+- (void)testIsToday {
+    NSDate *now = [NSDate date];
+    XCTAssert([now isToday]);
     
-    // These are kind of dumb tests, but this framework is just being done as
-    // an exercise.
+    NSDate *yesterday = [now dateByAddingTimeInterval:-kTimeIntervalOneDay];
+    XCTAssertFalse([yesterday isToday]);
+}
+
+- (void)testIsTomorrow {
+    NSDate *now = [NSDate date];
+    XCTAssertFalse([now isTomorrow]);
+    
+    NSDate *tomorrow = [now dateByAddingTimeInterval:kTimeIntervalOneDay];
+    XCTAssert([tomorrow isTomorrow]);
+}
+
+- (void)testIsYesterday {
+    NSDate *now = [NSDate date];
+    XCTAssertFalse([now isYesterday]);
+    
+    NSDate *yesterday = [now dateByAddingTimeInterval:-kTimeIntervalOneDay];
+    XCTAssert([yesterday isYesterday]);
 }
 
 @end
