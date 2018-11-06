@@ -32,8 +32,19 @@ class Node: CustomStringConvertible {
     }
 }
 
-let rootNode = Node(player: .black, move: 4)
-print(rootNode)
-rootNode.addChild(Node(player: .white, move: 2))
-rootNode.addChild(Node(player: .white, move: 8))
-print(rootNode)
+// A tree of alternating-turn moves to play around with...
+let b4 = Node(player: .black, move: 4)
+    let b4_w2 = Node(player: .white, move: 2)
+        let b4_w2_b8 = Node(player: .black, move: 8)
+        b4_w2.addChild(b4_w2_b8)
+        let b4_w2_b5 = Node(player: .black, move: 5)
+        b4_w2.addChild(b4_w2_b5)
+    b4.addChild(b4_w2)
+    let b4_w8 = Node(player: .white, move: 8)
+        let b4_w8_b2 = Node(player: .black, move: 2)
+        b4_w8.addChild(b4_w8_b2)
+        let b4_w8_b5 = Node(player: .black, move: 2)
+        b4_w8.addChild(b4_w8_b5)
+    b4.addChild(b4_w8)
+print(b4)
+
