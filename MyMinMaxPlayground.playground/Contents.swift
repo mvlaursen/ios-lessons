@@ -104,5 +104,9 @@ let b4 = Node(board: Board(squares: [Player.empty, Player.empty, Player.empty, P
         b4_w5.addChild(b4_w5_b2)
         let b4_w5_b7 = Node(board: Board(squares: [Player.empty, Player.empty, Player.empty, Player.empty, Player.black, Player.white, Player.black, Player.empty, Player.white]))
         b4_w5.addChild(b4_w5_b7)
+let b6 = Node(board: Board(squares: [Player.empty, Player.empty, Player.empty, Player.empty, Player.empty, Player.empty, Player.black, Player.empty, Player.empty]))
+let b7 = Node(board: Board(squares: [Player.empty, Player.empty, Player.empty, Player.empty, Player.empty, Player.empty, Player.empty, Player.black, Player.empty]))
 print(b4)
+print(b6)
+print(b7)
 
