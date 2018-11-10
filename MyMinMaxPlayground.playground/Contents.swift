@@ -21,13 +21,16 @@ enum Player: CustomStringConvertible {
 // 3 4 5
 // 6 7 8
 struct Board {
+    static let runIndicesList: [[Int]] = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 4, 8], [2, 4, 6], [0, 3, 6], [1, 4, 7], [2, 5, 8]]
+    
     let squares: Array<Player>
     
     init(squares: Array<Player>) {
         self.squares = squares
     }
     
-    func describe(withIndentLevel level: Int) -> String {
+    func describe(indentLevel level: Int) -> String {
         let tabs = String(repeating: "\t", count: level)
         var description = tabs
         description += "\(squares[0].description) \(squares[1].description) \(squares[2].description)\n"
@@ -35,13 +38,32 @@ struct Board {
         description += "\(squares[3].description) \(squares[4].description) \(squares[5].description)\n"
         description += tabs
         description += "\(squares[6].description) \(squares[7].description) \(squares[8].description)\n"
-        description += "\n"
+        description += tabs
+        description += "score: \(self.score())\n"
         return description
     }
     
-    // The score is always positive for the player at the top of the tree.
-    func score(node: Node) -> Int {
-        return 0
+    func scoreRun(runIndices: [Int]) -> Int {
+        let run = runIndices.map { (index) -> Player in
+            self.squares[index]
+        }
+        let score = run.reduce(0) { (total, player) -> Int in
+            switch player {
+            case .empty: return total
+            case .black: return total + 1
+            case .white: return total - 1
+            }
+        }
+        return score
+    }
+    
+    // Positive is a good move for Player.black.
+    func score() -> Int {
+        var score = 0
+        for runIndices in Board.runIndicesList {
+            score += scoreRun(runIndices: runIndices)
+        }
+        return score
     }
 }
 
@@ -60,7 +82,7 @@ class Node: CustomStringConvertible {
     }
 
     var description: String {
-        var description = self.board.describe(withIndentLevel: self.depth)
+        var description = self.board.describe(indentLevel: self.depth)
         for child in children {
             description += child.description
         }
