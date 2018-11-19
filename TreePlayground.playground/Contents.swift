@@ -13,16 +13,17 @@ class Node {
 }
 
 func printTree(_ node: Node) {
-    var stack: Array<Node> = [node]
+    var stack: Array<(node: Node, depth: Int)> = [(node: node, depth: 0)]
     
     while stack.count > 0 {
-        let currentNode = stack.remove(at: 0)
-        print("\(currentNode.value)")
-        if let right = currentNode.right {
-            stack.insert(right, at: 0)
+        let current = stack.remove(at: 0)
+        let tabs = String(repeating: "\t", count: current.depth)
+        print(tabs + "\(current.node.value)")
+        if let right = current.node.right {
+            stack.insert((node: right, depth: current.depth + 1), at: 0)
         }
-        if let left = currentNode.left {
-            stack.insert(left, at: 0)
+        if let left = current.node.left {
+            stack.insert((node: left, depth: current.depth + 1), at: 0)
         }
     }
 }
