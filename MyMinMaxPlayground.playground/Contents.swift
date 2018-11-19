@@ -39,7 +39,7 @@ struct Board {
         description += tabs
         description += "\(squares[6].description) \(squares[7].description) \(squares[8].description)\n"
         description += tabs
-        description += "score: \(self.score())\n"
+        description += "board score: \(self.score())\n"
         return description
     }
     
@@ -71,6 +71,7 @@ class Node: CustomStringConvertible {
     let board: Board
     var depth: Int = 0
     var children: [Node] = []
+    var score: Int = 0
     
     init(board: Board) {
         self.board = board
@@ -83,10 +84,35 @@ class Node: CustomStringConvertible {
 
     var description: String {
         var description = self.board.describe(indentLevel: self.depth)
+        description += String(repeating: "\t", count: depth)
+        description += "node score: \(self.score)\n"
         for child in children {
             description += child.description
         }
         return description
+    }
+    
+    func updateScore() {
+        let blackMove = (depth % 2 == 0)
+        if blackMove {
+            score = -1000
+        } else {
+            score = 1000
+        }
+    
+        if children.count > 0 {
+            for child in children {
+                child.updateScore()
+    
+                if blackMove {
+                    score = max(score, child.score)
+                } else {
+                    score = min(score, child.score)
+                }
+            }
+        } else {
+            score = board.score()
+        }
     }
 }
 
@@ -106,7 +132,10 @@ let b4 = Node(board: Board(squares: [Player.empty, Player.empty, Player.empty, P
         b4_w5.addChild(b4_w5_b7)
 let b6 = Node(board: Board(squares: [Player.empty, Player.empty, Player.empty, Player.empty, Player.empty, Player.empty, Player.black, Player.empty, Player.empty]))
 let b7 = Node(board: Board(squares: [Player.empty, Player.empty, Player.empty, Player.empty, Player.empty, Player.empty, Player.empty, Player.black, Player.empty]))
+b4.updateScore()
 print(b4)
+b6.updateScore()
 print(b6)
+b7.updateScore()
 print(b7)
 
