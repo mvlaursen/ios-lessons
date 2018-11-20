@@ -28,6 +28,16 @@ func printTree(_ node: Node) {
     }
 }
 
+func areReversed(nodeA: Node?, nodeB: Node?) -> Bool {
+    if nodeA == nil && nodeB == nil {
+        return true
+    } else if nodeA == nil || nodeB == nil {
+        return false
+    } else {
+        return nodeA!.value == nodeB!.value && areReversed(nodeA: nodeA!.left, nodeB: nodeB!.right) && areReversed(nodeA: nodeA!.right, nodeB: nodeB!.left)
+    }
+}
+
 func reverseTree(_ node: Node) -> Node {
     var reversedLeft: Node? = nil
     var reversedRight: Node? = nil
@@ -56,3 +66,4 @@ let na = Node(value: 0, left: na_1, right: na_2)
 printTree(na)
 let nr = reverseTree(na)
 printTree(nr)
+areReversed(nodeA: na, nodeB: nr)
