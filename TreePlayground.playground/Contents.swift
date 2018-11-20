@@ -28,6 +28,19 @@ func printTree(_ node: Node) {
     }
 }
 
+func reverseTree(_ node: Node) -> Node {
+    var reversedLeft: Node? = nil
+    var reversedRight: Node? = nil
+    
+    if let left = node.left {
+        reversedLeft = reverseTree(left)
+    }
+    if let right = node.right {
+        reversedRight = reverseTree(right)
+    }
+    return Node(value: node.value, left: reversedRight, right: reversedLeft)
+}
+
 // 0
 //    1
 //        4
@@ -41,3 +54,5 @@ let na_2_6 = Node(value: 6, left: nil, right: nil)
 let na_2 = Node(value: 2, left: na_2_6, right: nil)
 let na = Node(value: 0, left: na_1, right: na_2)
 printTree(na)
+let nr = reverseTree(na)
+printTree(nr)
