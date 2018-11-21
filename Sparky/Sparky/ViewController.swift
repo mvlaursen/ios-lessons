@@ -18,7 +18,10 @@ class ViewController: UIViewController {
     }
     
     @objc func onTap(tapGestureRecognizer: UITapGestureRecognizer) {
-        print("Hello, world!")
+        if tapGestureRecognizer.state == .recognized {
+            let location = tapGestureRecognizer.location(in: self.view)
+            print("tap at: \(location)")
+        }
     }
 }
 
