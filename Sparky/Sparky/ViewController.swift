@@ -9,12 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTap))
+        self.view.addGestureRecognizer(tapGestureRecognizer)
     }
-
-
+    
+    @objc func onTap(tapGestureRecognizer: UITapGestureRecognizer) {
+        print("Hello, world!")
+    }
 }
 
