@@ -10,6 +10,8 @@ import UIKit
 //import CoreGraphics
 
 class PlasmaView: UIView {
+    static let colors = [UIColor.blue, UIColor.cyan, UIColor.green, UIColor.magenta, UIColor.purple, UIColor.red, UIColor.white]
+    
     var mostRecentTap: CGPoint? = nil
     
     required init?(coder aDecoder: NSCoder) {
@@ -21,7 +23,6 @@ class PlasmaView: UIView {
     @objc func onTap(tapGestureRecognizer: UITapGestureRecognizer) {
         if tapGestureRecognizer.state == .recognized {
             mostRecentTap = tapGestureRecognizer.location(in: self)
-            print("tap at: \(mostRecentTap)")
             self.setNeedsDisplay()
         }
     }
@@ -30,8 +31,10 @@ class PlasmaView: UIView {
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         if let tap = mostRecentTap {
-            UIColor.blue.set()
+            PlasmaView.colors.randomElement()?.set()
+            
             let path = UIBezierPath()
+            path.lineWidth = 3.0
             path.move(to: self.center)
             path.addLine(to: tap)
             path.stroke()
