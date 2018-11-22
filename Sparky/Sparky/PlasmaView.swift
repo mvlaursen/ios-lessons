@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import CoreGraphics
 
 class PlasmaView: UIView {
     var mostRecentTap: CGPoint? = nil
@@ -21,12 +22,19 @@ class PlasmaView: UIView {
         if tapGestureRecognizer.state == .recognized {
             mostRecentTap = tapGestureRecognizer.location(in: self)
             print("tap at: \(mostRecentTap)")
+            self.setNeedsDisplay()
         }
     }
 
         // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        // Drawing code
+        if let tap = mostRecentTap {
+            UIColor.blue.set()
+            let path = UIBezierPath()
+            path.move(to: self.center)
+            path.addLine(to: tap)
+            path.stroke()
+        }
     }
 }
