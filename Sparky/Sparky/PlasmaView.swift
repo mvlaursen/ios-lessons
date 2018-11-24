@@ -44,6 +44,25 @@ class PlasmaView: UIView {
     var timer: Timer? = nil
     var touchMemories = Set<TouchMemory>()
     
+    func electrifyLine(start: CGPoint, end: CGPoint) -> [CGPoint] {
+        let xLength: CGFloat = end.x - start.x
+        let yLength: CGFloat = end.y - start.y
+        
+        let numPoints = 10
+        var points: [CGPoint] = []
+
+        for i in 1..<numPoints{
+            var xOffset = CGFloat(i) * xLength / CGFloat(numPoints)
+            xOffset = xOffset + CGFloat.random(in: -0.2...0.2) * xOffset
+            var yOffset = CGFloat(i) * yLength / CGFloat(numPoints)
+            yOffset = yOffset + CGFloat.random(in: -0.2...0.2) * yOffset
+            points.append(CGPoint(x: start.x + xOffset, y: start.y + yOffset))
+        }
+        
+        points.append(end)
+        return points
+    }
+    
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
@@ -51,12 +70,19 @@ class PlasmaView: UIView {
             touchMemory.color.set()
             let path = UIBezierPath()
             path.lineWidth = 3.0
-            path.move(to: self.center)
-            path.addLine(to: touchMemory.touchPoint)
+            
             var alpha = 1.0
             if !touchMemory.isActive {
                 alpha = max(0.0, (PlasmaView.fadeTime - (NSDate().timeIntervalSince1970 - touchMemory.time)) / PlasmaView.fadeTime)
             }
+
+            let points = electrifyLine(start: self.center, end: touchMemory.touchPoint)
+            path.move(to: self.center)
+            
+            for point in points {
+                path.addLine(to: point)
+            }
+            
             path.stroke(with: .normal, alpha: CGFloat(alpha))
         }
     }
