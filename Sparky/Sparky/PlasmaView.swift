@@ -41,10 +41,15 @@ class PlasmaView: UIView {
     
     static let fadeTime = 2.0
 
+    var maxLightningOffset: CGFloat? = nil
     var timer: Timer? = nil
     var touchMemories = Set<TouchMemory>()
     
-    func electrifyLine(start: CGPoint, end: CGPoint) -> [CGPoint] {
+    func lightningifyLine(start: CGPoint, end: CGPoint) -> [CGPoint] {
+        if maxLightningOffset == nil {
+            maxLightningOffset = self.frame.width / CGFloat(10.0)
+        }
+        
         let xLength: CGFloat = end.x - start.x
         let yLength: CGFloat = end.y - start.y
         
@@ -53,9 +58,9 @@ class PlasmaView: UIView {
 
         for i in 1..<numPoints{
             var xOffset = CGFloat(i) * xLength / CGFloat(numPoints)
-            xOffset = xOffset + CGFloat.random(in: -0.2...0.2) * xOffset
+            xOffset = xOffset + CGFloat.random(in: -0.2...0.2) * (maxLightningOffset ?? 0.0)
             var yOffset = CGFloat(i) * yLength / CGFloat(numPoints)
-            yOffset = yOffset + CGFloat.random(in: -0.2...0.2) * yOffset
+            yOffset = yOffset + CGFloat.random(in: -0.2...0.2) * (maxLightningOffset ?? 0.0)
             points.append(CGPoint(x: start.x + xOffset, y: start.y + yOffset))
         }
         
@@ -76,7 +81,7 @@ class PlasmaView: UIView {
                 alpha = max(0.0, (PlasmaView.fadeTime - (NSDate().timeIntervalSince1970 - touchMemory.time)) / PlasmaView.fadeTime)
             }
 
-            let points = electrifyLine(start: self.center, end: touchMemory.touchPoint)
+            let points = lightningifyLine(start: self.center, end: touchMemory.touchPoint)
             path.move(to: self.center)
             
             for point in points {
