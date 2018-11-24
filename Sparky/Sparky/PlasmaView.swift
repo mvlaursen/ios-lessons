@@ -68,6 +68,7 @@ class PlasmaView: UIView {
         } else {
             self.timer?.invalidate()
             self.timer = nil
+            self.setNeedsDisplay()
         }
     }
 
