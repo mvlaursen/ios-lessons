@@ -47,13 +47,13 @@ class PlasmaView: UIView {
     
     func lightningifyLine(start: CGPoint, end: CGPoint) -> [CGPoint] {
         if maxLightningOffset == nil {
-            maxLightningOffset = self.frame.width / CGFloat(10.0)
+            maxLightningOffset = self.frame.width / CGFloat(5.0)
         }
         
         let xLength: CGFloat = end.x - start.x
         let yLength: CGFloat = end.y - start.y
         
-        let numPoints = 10
+        let numPoints = (2...10).randomElement()!
         var points: [CGPoint] = []
 
         for i in 1..<numPoints{
