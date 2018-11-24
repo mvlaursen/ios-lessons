@@ -27,6 +27,7 @@ class PlasmaView: UIView {
         }
     }
     
+    var timer: Timer? = nil
     var touchMemories: [TouchMemory] = []
     
     // Only override draw() if you perform custom drawing.
@@ -49,7 +50,17 @@ class PlasmaView: UIView {
             if let touch = touches.first {
                 let touchMemory = TouchMemory(color: PlasmaView.colors.randomElement() ?? UIColor.white, touch: touch, touchPoint: touch.location(in: self))
                 touchMemories.append(touchMemory)
-                self.setNeedsDisplay()
+
+                if timer == nil {
+                    timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (_) in
+                        if self.touchMemories.count > 0 {
+                            self.setNeedsDisplay()
+                        } else {
+                            self.timer?.invalidate()
+                            self.timer = nil
+                        }
+                    }
+                }
             }
         } else {
             super.touchesBegan(touches, with: event)
@@ -77,17 +88,10 @@ class PlasmaView: UIView {
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var hadAtLeastOneMove = false
-        
         for i in 0..<touchMemories.count {
             if touches.contains(touchMemories[i].touch) {
                 touchMemories[i].touchPoint = touchMemories[i].touch.location(in: self)
-                hadAtLeastOneMove = true
             }
-        }
-        
-        if hadAtLeastOneMove {
-            self.setNeedsDisplay()
         }
     }
 }
