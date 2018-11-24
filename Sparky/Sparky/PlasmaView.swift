@@ -12,31 +12,41 @@ import UIKit
 class PlasmaView: UIView {
     static let colors = [UIColor.blue, UIColor.cyan, UIColor.green, UIColor.magenta, UIColor.purple, UIColor.red, UIColor.white]
     
-    var mostRecentTap: CGPoint? = nil
+    var color: UIColor = UIColor.white
+    var touch: UITouch? = nil
+    var touchPoint: CGPoint? = nil
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTap)))
     }
     
-    @objc func onTap(tapGestureRecognizer: UITapGestureRecognizer) {
-        if tapGestureRecognizer.state == .recognized {
-            mostRecentTap = tapGestureRecognizer.location(in: self)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        assert(touches.count == 1)
+        if touches.count == 1 {
+            color = PlasmaView.colors.randomElement() ?? UIColor.white
+            touch = touches.first
+            touchPoint = touch?.location(in: self)
             self.setNeedsDisplay()
         }
     }
-
-        // Only override draw() if you perform custom drawing.
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touchToTrack = touch {
+            if touches.contains(touchToTrack) {
+                print("----- Touch moved. -----")
+            }
+        }
+    }
+    
+    // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        if let tap = mostRecentTap {
-            PlasmaView.colors.randomElement()?.set()
-            
+        if let mostRecentTouchPoint = touchPoint {
+            color.set()
             let path = UIBezierPath()
             path.lineWidth = 3.0
             path.move(to: self.center)
-            path.addLine(to: tap)
+            path.addLine(to: mostRecentTouchPoint)
             path.stroke()
         }
     }
