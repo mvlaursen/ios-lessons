@@ -39,6 +39,8 @@ class PlasmaView: UIView {
         }
     }
     
+    static let fadeTime = 2.0
+
     var timer: Timer? = nil
     var touchMemories = Set<TouchMemory>()
     
@@ -51,14 +53,17 @@ class PlasmaView: UIView {
             path.lineWidth = 3.0
             path.move(to: self.center)
             path.addLine(to: touchMemory.touchPoint)
-            print("-----> \(touchMemory.touchPoint)")
-            path.stroke()
+            var alpha = 1.0
+            if !touchMemory.isActive {
+                alpha = max(0.0, (PlasmaView.fadeTime - (NSDate().timeIntervalSince1970 - touchMemory.time)) / PlasmaView.fadeTime)
+            }
+            path.stroke(with: .normal, alpha: CGFloat(alpha))
         }
     }
 
     func updateOnTimer(timer: Timer) {
         for touchMemory in self.touchMemories {
-            if !touchMemory.isActive && NSDate().timeIntervalSince1970 - touchMemory.time > 2.0 {
+            if !touchMemory.isActive && NSDate().timeIntervalSince1970 - touchMemory.time > PlasmaView.fadeTime {
                 self.touchMemories.remove(touchMemory)
             }
         }
