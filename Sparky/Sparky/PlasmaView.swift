@@ -7,18 +7,21 @@
 //
 
 import UIKit
-//import CoreGraphics
 
 class PlasmaView: UIView {
     static let colors = [UIColor.blue, UIColor.cyan, UIColor.green, UIColor.magenta, UIColor.purple, UIColor.red, UIColor.white]
     
     struct TouchMemory {
         let color: UIColor
+        var isActive: Bool
+        let time: TimeInterval
         let touch: UITouch
         var touchPoint: CGPoint
         
         init(color: UIColor, touch: UITouch, touchPoint: CGPoint) {
             self.color = color
+            self.isActive = true
+            self.time = NSDate().timeIntervalSince1970
             self.touch = touch
             self.touchPoint = touchPoint
         }
@@ -53,10 +56,20 @@ class PlasmaView: UIView {
         }
     }
     
+    func endTouches(_ touches: Set<UITouch>) {
+        for i in 0..<touchMemories.count {
+            if touches.contains(touchMemories[i].touch) {
+                touchMemories[i].isActive = false
+            }
+        }
+    }
+
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        endTouches(touches)
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        endTouches(touches)
     }
 
     override func touchesEstimatedPropertiesUpdated(_ touches: Set<UITouch>) {
