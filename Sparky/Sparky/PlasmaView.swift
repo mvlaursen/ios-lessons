@@ -26,19 +26,16 @@ class PlasmaView: UIView {
     
     var touchMemories: [TouchMemory] = []
     
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//    }
-//
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        if touchMemories.count > 0 {
-            touchMemories[0].color.set()
+        for touchMemory in touchMemories {
+            touchMemory.color.set()
             let path = UIBezierPath()
             path.lineWidth = 3.0
             path.move(to: self.center)
-            path.addLine(to: touchMemories[0].touchPoint)
+            path.addLine(to: touchMemory.touchPoint)
+            print("-----> \(touchMemory.touchPoint)")
             path.stroke()
         }
     }
@@ -48,7 +45,7 @@ class PlasmaView: UIView {
         if touches.count == 1 {
             if let touch = touches.first {
                 let touchMemory = TouchMemory(color: PlasmaView.colors.randomElement() ?? UIColor.white, touch: touch, touchPoint: touch.location(in: self))
-                touchMemories = [touchMemory]
+                touchMemories.append(touchMemory)
                 self.setNeedsDisplay()
             }
         } else {
@@ -57,63 +54,27 @@ class PlasmaView: UIView {
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var didHandleCancel = false
-        
-        if touchMemories.count > 0 {
-            if touches.contains(touchMemories[0].touch) {
-                touchMemories = []
-                didHandleCancel = true
-            }
-        }
-        
-        if !didHandleCancel {
-            super.touchesCancelled(touches, with: event)
-        }
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var didHandleEnd = false
-        
-        if touchMemories.count > 0 {
-            if touches.contains(touchMemories[0].touch) {
-                touchMemories = []
-                didHandleEnd = true
-            }
-        }
-
-        if !didHandleEnd {
-            super.touchesEnded(touches, with: event)
-        }
     }
 
     override func touchesEstimatedPropertiesUpdated(_ touches: Set<UITouch>) {
-        var didHandleUpdate = false
-        
-        if touchMemories.count > 0 {
-            if touches.contains(touchMemories[0].touch) {
-                touchMemories[0].touchPoint = touchMemories[0].touch.location(in: self)
-                didHandleUpdate = true
-            }
-        }
-        
-        if !didHandleUpdate {
-            super.touchesEstimatedPropertiesUpdated(touches)
-        }
+        super.touchesEstimatedPropertiesUpdated(touches)
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        var didHandleMove = false
+        var hadAtLeastOneMove = false
         
-        if touchMemories.count > 0 {
-            if touches.contains(touchMemories[0].touch) {
-                touchMemories[0].touchPoint = touchMemories[0].touch.location(in: self)
-                self.setNeedsDisplay()
-                didHandleMove = true
+        for i in 0..<touchMemories.count {
+            if touches.contains(touchMemories[i].touch) {
+                touchMemories[i].touchPoint = touchMemories[i].touch.location(in: self)
+                hadAtLeastOneMove = true
             }
         }
         
-        if !didHandleMove {
-            super.touchesMoved(touches, with: event)
+        if hadAtLeastOneMove {
+            self.setNeedsDisplay()
         }
     }
 }
