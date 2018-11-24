@@ -12,23 +12,33 @@ import UIKit
 class PlasmaView: UIView {
     static let colors = [UIColor.blue, UIColor.cyan, UIColor.green, UIColor.magenta, UIColor.purple, UIColor.red, UIColor.white]
     
-    var color: UIColor = UIColor.black
-    var touch: UITouch? = nil
-    var touchPoint: CGPoint? = nil
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    struct TouchMemory {
+        let color: UIColor
+        let touch: UITouch
+        var touchPoint: CGPoint
+        
+        init(color: UIColor, touch: UITouch, touchPoint: CGPoint) {
+            self.color = color
+            self.touch = touch
+            self.touchPoint = touchPoint
+        }
     }
     
+    var touchMemories: [TouchMemory] = []
+    
+//    required init?(coder aDecoder: NSCoder) {
+//        super.init(coder: aDecoder)
+//    }
+//
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        if let mostRecentTouchPoint = touchPoint {
-            color.set()
+        if touchMemories.count > 0 {
+            touchMemories[0].color.set()
             let path = UIBezierPath()
             path.lineWidth = 3.0
             path.move(to: self.center)
-            path.addLine(to: mostRecentTouchPoint)
+            path.addLine(to: touchMemories[0].touchPoint)
             path.stroke()
         }
     }
@@ -36,27 +46,22 @@ class PlasmaView: UIView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         assert(touches.count == 1)
         if touches.count == 1 {
-            color = PlasmaView.colors.randomElement() ?? UIColor.white
-            touch = touches.first
-            touchPoint = touch?.location(in: self)
-            self.setNeedsDisplay()
+            if let touch = touches.first {
+                let touchMemory = TouchMemory(color: PlasmaView.colors.randomElement() ?? UIColor.white, touch: touch, touchPoint: touch.location(in: self))
+                touchMemories = [touchMemory]
+                self.setNeedsDisplay()
+            }
         } else {
             super.touchesBegan(touches, with: event)
         }
     }
     
-    func stopTrackingTouch() {
-        color = UIColor.black
-        touch = nil
-        touchPoint = nil
-    }
-    
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         var didHandleCancel = false
         
-        if let touch = self.touch {
-            if touches.contains(touch) {
-                stopTrackingTouch()
+        if touchMemories.count > 0 {
+            if touches.contains(touchMemories[0].touch) {
+                touchMemories = []
                 didHandleCancel = true
             }
         }
@@ -69,9 +74,9 @@ class PlasmaView: UIView {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         var didHandleEnd = false
         
-        if let touch = self.touch {
-            if touches.contains(touch) {
-                stopTrackingTouch()
+        if touchMemories.count > 0 {
+            if touches.contains(touchMemories[0].touch) {
+                touchMemories = []
                 didHandleEnd = true
             }
         }
@@ -84,9 +89,9 @@ class PlasmaView: UIView {
     override func touchesEstimatedPropertiesUpdated(_ touches: Set<UITouch>) {
         var didHandleUpdate = false
         
-        if let touch = self.touch {
-            if touches.contains(touch) {
-                touchPoint = touch.location(in: self)
+        if touchMemories.count > 0 {
+            if touches.contains(touchMemories[0].touch) {
+                touchMemories[0].touchPoint = touchMemories[0].touch.location(in: self)
                 didHandleUpdate = true
             }
         }
@@ -99,9 +104,9 @@ class PlasmaView: UIView {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         var didHandleMove = false
         
-        if let touch = self.touch {
-            if touches.contains(touch) {
-                touchPoint = touch.location(in: self)
+        if touchMemories.count > 0 {
+            if touches.contains(touchMemories[0].touch) {
+                touchMemories[0].touchPoint = touchMemories[0].touch.location(in: self)
                 self.setNeedsDisplay()
                 didHandleMove = true
             }
