@@ -18,20 +18,24 @@ class PlasmaView: UIView {
         let touch: UITouch
         let touchPoint: CGPoint
         
-        init(color: UIColor, isActive: Bool, touch: UITouch, touchPoint: CGPoint) {
+        init(color: UIColor, isActive: Bool, time: TimeInterval, touch: UITouch, touchPoint: CGPoint) {
             self.color = color
             self.isActive = isActive
-            self.time = NSDate().timeIntervalSince1970
+            self.time = time
             self.touch = touch
             self.touchPoint = touchPoint
         }
         
         func copy(newTouchPoint: CGPoint) -> TouchMemory {
-            return TouchMemory(color: color, isActive: isActive, touch: touch, touchPoint: newTouchPoint)
+            return TouchMemory(color: color, isActive: isActive, time: time, touch: touch, touchPoint: newTouchPoint)
         }
         
         func inactiveCopy() -> TouchMemory {
-            return TouchMemory(color: color, isActive: false, touch: touch, touchPoint: touchPoint)
+            return TouchMemory(color: color, isActive: false, time: time, touch: touch, touchPoint: touchPoint)
+        }
+        
+        func copyWithNewColor() -> TouchMemory {
+            return TouchMemory(color: PlasmaView.colors.randomElement() ?? UIColor.white, isActive: isActive, time: time, touch: touch, touchPoint: touchPoint)
         }
         
         func hash(into hasher: inout Hasher) {
@@ -96,6 +100,9 @@ class PlasmaView: UIView {
         for touchMemory in self.touchMemories {
             if !touchMemory.isActive && NSDate().timeIntervalSince1970 - touchMemory.time > PlasmaView.fadeTime {
                 self.touchMemories.remove(touchMemory)
+            } else if NSDate().timeIntervalSince1970 - touchMemory.time > PlasmaView.fadeTime / 100.0 {
+                self.touchMemories.remove(touchMemory)
+                self.touchMemories.insert(touchMemory.copyWithNewColor())
             }
         }
         
@@ -112,11 +119,11 @@ class PlasmaView: UIView {
         assert(touches.count == 1)
         if touches.count == 1 {
             if let touch = touches.first {
-                let touchMemory = TouchMemory(color: PlasmaView.colors.randomElement() ?? UIColor.white, isActive: true, touch: touch, touchPoint: touch.location(in: self))
+                let touchMemory = TouchMemory(color: PlasmaView.colors.randomElement() ?? UIColor.white, isActive: true, time: NSDate().timeIntervalSince1970, touch: touch, touchPoint: touch.location(in: self))
                 touchMemories.insert(touchMemory)
 
                 if timer == nil {
-                    timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: updateOnTimer)
+                    timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: updateOnTimer)
                 }
             }
         } else {
