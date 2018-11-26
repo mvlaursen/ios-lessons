@@ -44,6 +44,7 @@ class PlasmaView: UIView {
     }
     
     static let fadeTime = 2.0
+    static let displayRate = 0.075
 
     var maxLightningOffset: CGFloat? = nil
     var timer: Timer? = nil
@@ -123,7 +124,7 @@ class PlasmaView: UIView {
                 touchMemories.insert(touchMemory)
 
                 if timer == nil {
-                    timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: updateOnTimer)
+                    timer = Timer.scheduledTimer(withTimeInterval: PlasmaView.displayRate, repeats: true, block: updateOnTimer)
                 }
             }
         } else {
